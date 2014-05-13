@@ -83,6 +83,7 @@ if (unicodeString.replace('Treble', 'Bass') === '\uD834\uDD22 - The Bass Clef') 
 }
 
 title = 'Test 10';
+// As far as I can tell there is no way to swet the locale or language in JavaScript
 unicodeString = 'i';
 if (unicodeString.toUpperCase === '\u0130') {
   passed += 1;
