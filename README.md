@@ -97,7 +97,9 @@ Both the code and the detailed results are stored in a separate folder for each 
 I have no doubt that the tests could be improved. If you have any suggestions to make, please do so by raising an issue in this repository.
 
 ###Improving the Code
-I also have little doubt that the code could be improved. However the purpose of this repository is to check the Unicode features of the language, so as long as the code correctly reflects that it is sufficient. If the code does not properly reflect the out-of-the-box capability of the language, please submit a pull request with the corrected code.
+I also have little doubt that the code could be improved. It is quite possible that the code does not properly reflect the out-of-the-box capability of the language. Please submit a pull request if you can improve it.
+
+Please bear in mind that the purpose of this repository is to check the Unicode features of the language, so as long as the code correctly reflects them it is sufficient.
 
 ###Adding Further Languages
 Contributions of the tests written in languages not currently covered would be most welcome. Please submit a pull request with the code and results
