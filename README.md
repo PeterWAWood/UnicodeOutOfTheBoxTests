@@ -4,7 +4,7 @@ UnicodeOutOfTheBoxTests
 A short set of tests to give an indication of how well a language supports Unicode "Out of the Box".
 
 
-"Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
+Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
 
 In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
 
@@ -71,10 +71,11 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
 ###The Results
 
-| Language | Score |
---------------------
-LiveCode | 9 out of 12|
-JavaScript | 5 out of 12|
+```
+Language                                Score
+LiveCode                            9 out of 12
+JavaScript                          5 out of 12
+```
 
 ###The Code and Detailed Results
 Both the code and the detailed results are stored in a separate folder for each language under the main directory. The results are simply the console output (or equivalent) saved in a text file.
