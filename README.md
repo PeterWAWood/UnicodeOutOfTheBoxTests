@@ -87,7 +87,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 Language                                Score
 LiveCode 7                          9 out of 12
 JavaScript                          5 out of 12
-Ruby                                3 out of 12               These test were written using UTF-8
+Ruby                                3 out of 12               These tests were written using UTF-8
 ```
 
 ###The Code and Detailed Results
