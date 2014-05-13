@@ -73,7 +73,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
 ```
 Language                                Score
-LiveCode                            9 out of 12
+LiveCode 7                          9 out of 12
 JavaScript                          5 out of 12
 ```
 
@@ -84,7 +84,7 @@ Both the code and the detailed results are stored in a separate folder for each 
 I have no doubt that the tests could be improved. If you have any suggestions to make, please do so by raising an issue in this repository.
 
 ###Improving the Code
-I also have little doubt that the code could be improved. However the purpose of this repository is to check the Unicode features of the language, so as long as the code correctly reflects that it is sufficient. If the code does not properly reflect the out-of-the-box capability of the language, please submit a pull request with the corrected caode.
+I also have little doubt that the code could be improved. However the purpose of this repository is to check the Unicode features of the language, so as long as the code correctly reflects that it is sufficient. If the code does not properly reflect the out-of-the-box capability of the language, please submit a pull request with the corrected code.
 
 ###Adding Further Languages
 Contributions of the tests written in languages not currently covered would be most welcome. Please submit a pull request with the code and results
