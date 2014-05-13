@@ -4,7 +4,7 @@ UnicodeOutOfTheBoxTests
 A short set of tests to give an indication of how well a language supports Unicode "Out of the Box".
 
 
-"Musing Mortoray's[blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
+"Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
 
 In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
 
