@@ -55,14 +55,14 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Upper case "i"
     The expected result is U+0130
 
-    (Requires the ability to indicate that Turkish languages rules should be used.)
+    (Requires the ability to indicate that Turkish language rules should be used.)
 
 11. Special Case - Turkish - Lower case "I"
     Set locale/Language to indicate Turkish 
     Lower case "I"
     The expected result is U+0131
 
-    (Requires the ability to indicate that Turkish languages rules should be used.)
+    (Requires the ability to indicate that Turkish language rules should be used.)
    
 12. Upper Case sharp s (U+00DF)
     Upper case "straU+00DFe"
