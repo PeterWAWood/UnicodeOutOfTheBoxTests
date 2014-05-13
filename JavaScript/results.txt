@@ -1,0 +1,54 @@
+NOTES:
+
+  V8 - Google V8 Engine
+  Rhino - Mozilla Java Hosted Engine
+  JSC - Apple JavaScriptCore
+  JS - Mozilla SpiderMonkey
+  
+  SpiderMonkey fails Test 6 which the others pass
+
+Schulz:JavaScript peter$ v8 UniCodeTests.js
+Failed Test 1
+Failed Test 3
+Failed Test 4
+Failed Test 5
+Failed Test 10
+Failed Test 11
+Failed Test 12
+Tests run  12
+Passed     5
+Failed     7
+Schulz:JavaScript peter$ rhino  UniCodeTests.js
+Failed Test 1
+Failed Test 3
+Failed Test 4
+Failed Test 5
+Failed Test 10
+Failed Test 11
+Failed Test 12
+Tests run  12
+Passed     5
+Failed     7
+Schulz:JavaScript peter$ jsc  UniCodeTests.js
+Failed Test 1
+Failed Test 3
+Failed Test 4
+Failed Test 5
+Failed Test 10
+Failed Test 11
+Failed Test 12
+Tests run  12
+Passed     5
+Failed     7
+Schulz:JavaScript peter$ js  UniCodeTests.js
+Failed Test 1
+Failed Test 3
+Failed Test 4
+Failed Test 5
+Failed Test 6
+Failed Test 10
+Failed Test 11
+Failed Test 12
+Tests run  12
+Passed     4
+Failed     8
