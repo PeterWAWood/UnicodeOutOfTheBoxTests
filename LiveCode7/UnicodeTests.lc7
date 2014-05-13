@@ -1,0 +1,187 @@
+## To run this script you need to create a new LiveCode Mainstack and place a Field 
+## named "Test Report" and a Button on the first card. Copy this script to be the script
+## for the button.
+
+## The Testing Code
+local tPassed
+local tFailed
+local tTestName
+local tAssertsPassed
+local tAssertsFailed
+local tTestReport
+
+command startTestRun pTestReport
+   put 0 into tPassed
+   put 0 into tFailed
+   put pTestReport into tTestReport
+   put empty into Field tTestReport
+end startTestRun
+
+command startTest pTestName
+   put pTestName into tTestName
+   put 0 into tAssertsPassed
+   put 0 into tAssertsFailed
+   put "Test" && tTestName & return after Field tTestReport
+end startTest
+
+command endTest
+   if tAssertsFailed > 0 then 
+      add 1 to tFailed
+      put tTestName && "Failed" & return after Field tTestReport
+      set the foregroundColor of line -1 of Field tTestReport to "red"
+   else
+      add 1 to tPassed
+      delete line -1 of Field tTestReport
+   end if
+end endTest
+
+command endTestRun 
+   local tNumTests
+   put tPassed + tFailed into tNumTests
+   put return & "Summary Test Results"  & return after Field tTestReport
+   put  "Number of Tests" & tab & tNumTests & return after Field tTestReport
+   put "Number Passed " & tab & tPassed  & return after Field tTestReport
+   put "Number Failed  "  & tab & tFailed & return  & return after Field tTestReport
+   if tFailed > 0 then
+      put "TEST FAILURES!!" & return after Field tTestReport
+      set the foregroundColor of line -1 of Field tTestReport to "red"
+   end if
+end endTestRun
+
+command assertionFailed pExpected, pActual
+   add 1 to tAssertsFailed
+      put "Assert #" & (tAssertsPassed + tAssertsFailed) & return after Field tTestReport
+      put "Expected" && pExpected & return after Field tTestReport
+      put "Actual" && pActual & return after Field tTestReport
+end assertionFailed
+
+command assertEqual pExpected, pActual
+   if pActual = pExpected then
+      add 1 to tAssertsPassed
+   else
+      assertionFailed pExpected, pActual
+   end if
+end assertEqual
+
+command assertNotEqual pExpected, pActual
+   if pActual <> pExpected then
+      add 1 to tAssertsPassed
+   else
+      assertionFailed pExpected, pActual
+   end if
+end assertNotEqual
+
+command assertTrue pActual
+   if pActual =  true then
+      add 1 to tAssertsPassed
+   else
+      assertionFailed "True", pActual
+   end if
+end assertTrue
+
+## Functions needed for testing
+function reversed pString
+    local tReversedString
+    repeat with tChar = the length of pString down to 1
+        put char tChar of pString after tReversedString
+    end repeat
+    return tReversedString
+end reversed
+
+## The Tests
+on mouseUp
+   #locals
+   local tCodepoint
+   local tDecomposed
+   local tPrecomposed
+   local tUnicodeString
+
+   # intialise test
+   startTestRun "Test Report"
+   
+   # tests
+   startTest "Unicode1"
+   # comparison precomposed and decomposed treated the same
+   put numToCodepoint(0xE7) into tPrecomposed
+   put  "c" & numToCodepoint(0x0327) into tDecomposed
+   assertEqual tPrecomposed, tDecomposed
+   endTest
+   
+   startTest "Unicode2"
+   # comparison precomposed and decomposed treated differently
+   put numToCodepoint(0xE7) into tPrecomposed
+   put  "c" & numToCodepoint(0x0327) into tDecomposed
+   set the formSensitive to true
+   assertTrue tPrecomposed <> tDecomposed
+   set the formSensitive to false
+   endTest
+   
+   startTest "Unicode3"
+   # correct length of text with decomposed string
+   put "noe" & numToCodepoint(0x0308) & "l" into tUnicodeString
+   assertEqual 4, the length of tUnicodeString
+   endTest
+   
+   startTest "Unicode4"
+   # correct reversing of decomposed string
+   put "noe" & numToCodepoint(0x0308) & "l" into tUnicodeString
+   assertEqual lëon, reversed(tUnicodeString)
+   endTest
+   
+   startTest "Unicode5"
+   # correct substring of decomposed string
+   put "noe" & numToCodepoint(0x0308) & "l" into tUnicodeString
+   assertEqual noë, char 1 to 3 of tUnicodeString
+   endTest
+   
+   startTest "Unicode6"
+   # correct uppercase conversion of U+FB04
+   put "ba" & numToCodepoint(0xFB04) & "e" into tUnicodeString
+   assertEqual "BAFFLE", the Upper of tUnicodeString
+   assertEqual 6, the Length of the Upper of tUnicodeString
+   endTest
+   
+   startTest "Unicode7"
+   # correct upercase of non-ASCII
+   # precomposed
+   put "cant" & numToCodepoint(0xF9) into tUnicodeString
+   assertEqual "CANT" & numToCodepoint(0XD9), the Upper of tUnicodestring
+   endTest
+   
+   startTest "Unicode8"
+   # correct upercase of non-ASCII
+   # decomposed
+   put "cantu" & numToCodepoint(0x0300) into tUnicodeString
+   assertEqual "CANTU" & numToCodepoint(0X0300), the Upper of tUnicodestring
+   endTest
+   
+   startTest "Unicode9"
+   # Processing chars above BMP
+   put numToCodepoint(0x1D11E) & " - The Treble Clef" into tUnicodeString
+   replace "𝄞" with "𝄢" in tUnicodeString
+   replace "Treble" with "Bass" in tUnicodeString
+   assertEqual "𝄢 - The Bass Clef", tUnicodeString
+   endTest
+   
+   startTest "Unicode10"
+   # special case - Turkish -uppercase "i"
+   put "i" into tUnicodeString
+   assertEqual numToCodepoint(0x0130), the Upper of tUnicodeString
+   endTest
+   
+   startTest "Unicode11"
+   # special case - Turkish -lowercase "I"
+   put "I" into tUnicodeString
+   assertEqual numToCodepoint(0x131), the Upper of tUnicodeString
+   endTest
+   
+   startTest "Unicode12"
+   # Upper case sharp s (U+00DF)
+   put "ma" & numToCodepoint(0xDF) into  tUnicodeString
+   assertEqual "MASS", the Upper of tUnicodeString
+   endTest
+   
+   # display summary
+   endTestRun
+   
+end mouseUp
