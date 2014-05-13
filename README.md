@@ -13,6 +13,8 @@ In this context, "out of the box" means capabilities either built-in to the lang
 1.  Equality of precomposed and decomposed characters
     Compare U+00E7 with "c" followed by U+0327
     The expected result is true.
+    U+00E7 is UTF-8 C3 A7
+    U+0327 is UTF-8 CC A7
 
 2.  Non-equality of precomposed and decomposed characters  
     Compare U+00E7 with "c" followed by U+0327
@@ -23,6 +25,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 3.  Correct length of text containing decomposed characters
     Length of "noeU+0308l"
     The expected result is 4.
+    U+0308 is UTF-8 CC 88
 
 4.  Reversing a string containing decomposed characters
     Reverse "noeU+0308l"
@@ -36,10 +39,13 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Upper case of "baU+FB04e"
     The expected result is "BAFFLE"
     The length of the expected result is 6
+    U+FB04 is UTF-8 EF AC 84
 
 7.  Correct uppercase of precomposed chars
     Upper case of "cantU+00F9"
     The expected result is "CANTU+00D9"
+    U+00D9 is UTF-8 C3 99
+    U+00F9 is UTF-8 C3 B9
 
 8.  Correct uppercase of decomposed chars
     Upper case of "cantuU+0300"
@@ -49,11 +55,14 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Change treble clef symbol of "U+1D11E - The Treble Clef" to bass clef symbol(U+1D122)
     Change "Treble" to "Bass"
     The expected result is "U+1D122 - The Bass Clef"
+    U+1D11E is UTF-8 F0 9D 84 9E
+    U+1D122 is UTF-8 F0 9D 84 A2
 
 10. Special Case - Turkish - Upper case "i"
     Set locale/Language to indicate Turkish 
     Upper case "i"
     The expected result is U+0130
+    U+0130 is UTF-8 C4 B0
 
     (Requires the ability to indicate that Turkish language rules should be used.)
 
@@ -61,12 +70,14 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Set locale/Language to indicate Turkish 
     Lower case "I"
     The expected result is U+0131
+    U+0130 is UTF-8 C4 B1
 
     (Requires the ability to indicate that Turkish language rules should be used.)
    
 12. Upper Case sharp s (U+00DF)
     Upper case "straU+00DFe"
     The expected result is "STRASSE"
+    U+00DF is UTF-8 C3 9F
 ```
 
 ###The Results
