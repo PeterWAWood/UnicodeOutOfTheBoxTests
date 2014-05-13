@@ -50,7 +50,8 @@ In this context, "out of the box" means capabilities either built-in to the lang
 8.  Correct uppercase of decomposed chars
     Upper case of "cantuU+0300"
     The expected result is "CANTUU+0300"
-
+    U+0300 is UTF-8 CC 80
+ 
 9.  Processing above BMP
     Change treble clef symbol of "U+1D11E - The Treble Clef" to bass clef symbol(U+1D122)
     Change "Treble" to "Bass"
