@@ -91,6 +91,7 @@ if (unicodeString.length === 17) {
 }
 
 title = 'Test 11';
+// As far as I can tell there is no way to swet the locale or language in JavaScript
 unicodeString = 'i';
 if (unicodeString.toUpperCase === '\u0130') {
   passed += 1;
@@ -113,9 +114,6 @@ if (unicodeString.toUpperCase === 'STRASSE') {
 } else {
   failedTest();
 }
-
-
-
 
 print('Tests run  ' + (passed + failed));
 print('Passed     ' + passed);

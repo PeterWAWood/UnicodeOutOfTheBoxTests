@@ -171,6 +171,7 @@ on mouseUp
    
    startTest "Unicode11"
    # special case - Turkish -uppercase "i"
+   # Currently, there is no way to set the locale or language in LiveCode
    put "i" into tUnicodeString
    assertEqual numToCodepoint(0x0130), the Upper of tUnicodeString
    endTest
