@@ -58,8 +58,12 @@ In this context, "out of the box" means capabilities either built-in to the lang
     The expected result is "U+1D122 - The Bass Clef"
     U+1D11E is UTF-8 F0 9D 84 9E
     U+1D122 is UTF-8 F0 9D 84 A2
+    
+10. Processing above BMP
+    Length of "U+1D122 - The Bass Clef"
+    The expected result is 17
 
-10. Special Case - Turkish - Upper case "i"
+11. Special Case - Turkish - Upper case "i"
     Set locale/Language to indicate Turkish 
     Upper case "i"
     The expected result is U+0130
@@ -67,7 +71,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
     (Requires the ability to indicate that Turkish language rules should be used.)
 
-11. Special Case - Turkish - Lower case "I"
+12. Special Case - Turkish - Lower case "I"
     Set locale/Language to indicate Turkish 
     Lower case "I"
     The expected result is U+0131
@@ -75,7 +79,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
     (Requires the ability to indicate that Turkish language rules should be used.)
    
-12. Upper Case sharp s (U+00DF)
+13. Upper Case sharp s (U+00DF)
     Upper case "straU+00DFe"
     The expected result is "STRASSE"
     U+00DF is UTF-8 C3 9F
@@ -85,9 +89,10 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
 ```
 Language                                Score
-LiveCode 7                          9 out of 12
-JavaScript                          5 out of 12
-Ruby                                3 out of 12               These tests were written using UTF-8
+Java                               10 out of 13
+LiveCode 7                         10 out of 13
+JavaScript                          5 out of 13
+Ruby                                4 out of 13               These tests were written using UTF-8
 ```
 
 ###The Code and Detailed Results

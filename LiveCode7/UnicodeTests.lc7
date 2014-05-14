@@ -164,18 +164,24 @@ on mouseUp
    endTest
    
    startTest "Unicode10"
+   # Processing chars above BMP
+   put "𝄢 - The Bass Clef" into tUnicodeString
+   assertEqual 17, the length of tUnicodeString
+   endTest
+   
+   startTest "Unicode11"
    # special case - Turkish -uppercase "i"
    put "i" into tUnicodeString
    assertEqual numToCodepoint(0x0130), the Upper of tUnicodeString
    endTest
    
-   startTest "Unicode11"
+   startTest "Unicode12"
    # special case - Turkish -lowercase "I"
    put "I" into tUnicodeString
    assertEqual numToCodepoint(0x131), the Upper of tUnicodeString
    endTest
    
-   startTest "Unicode12"
+   startTest "Unicode13"
    # Upper case sharp s (U+00DF)
    put "ma" & numToCodepoint(0xDF) into  tUnicodeString
    assertEqual "MASS", the Upper of tUnicodeString

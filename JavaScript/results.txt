@@ -7,7 +7,7 @@ NOTES:
   
   SpiderMonkey fails Test 6 which the others pass
 
-Schulz:JavaScript peter$ v8 UniCodeTests.js
+schulz:JavaScript peter$ v8 UnicodeTests.js
 Failed Test 1
 Failed Test 3
 Failed Test 4
@@ -15,10 +15,11 @@ Failed Test 5
 Failed Test 10
 Failed Test 11
 Failed Test 12
-Tests run  12
+Failed Test 13
+Tests run  13
 Passed     5
-Failed     7
-Schulz:JavaScript peter$ rhino  UniCodeTests.js
+Failed     8
+schulz:JavaScript peter$ jsc UnicodeTests.js
 Failed Test 1
 Failed Test 3
 Failed Test 4
@@ -26,10 +27,11 @@ Failed Test 5
 Failed Test 10
 Failed Test 11
 Failed Test 12
-Tests run  12
+Failed Test 13
+Tests run  13
 Passed     5
-Failed     7
-Schulz:JavaScript peter$ jsc  UniCodeTests.js
+Failed     8
+schulz:JavaScript peter$ rhino UnicodeTests.js
 Failed Test 1
 Failed Test 3
 Failed Test 4
@@ -37,10 +39,11 @@ Failed Test 5
 Failed Test 10
 Failed Test 11
 Failed Test 12
-Tests run  12
+Failed Test 13
+Tests run  13
 Passed     5
-Failed     7
-Schulz:JavaScript peter$ js  UniCodeTests.js
+Failed     8
+schulz:JavaScript peter$ js UnicodeTests.js
 Failed Test 1
 Failed Test 3
 Failed Test 4
@@ -49,6 +52,7 @@ Failed Test 6
 Failed Test 10
 Failed Test 11
 Failed Test 12
-Tests run  12
+Failed Test 13
+Tests run  13
 Passed     4
-Failed     8
+Failed     9

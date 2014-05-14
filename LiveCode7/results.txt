@@ -1,22 +1,22 @@
-Test Unicode10
-Assert #1
-Expected İ
-Actual I
-Unicode10 Failed
 Test Unicode11
 Assert #1
-Expected ı
+Expected İ
 Actual I
 Unicode11 Failed
 Test Unicode12
 Assert #1
+Expected ı
+Actual I
+Unicode12 Failed
+Test Unicode13
+Assert #1
 Expected MASS
 Actual MAß
-Unicode12 Failed
+Unicode13 Failed
 
 Summary Test Results
-Number of Tests	12
-Number Passed 	9
+Number of Tests	13
+Number Passed 	10
 Number Failed  	3
 
 TEST FAILURES!!

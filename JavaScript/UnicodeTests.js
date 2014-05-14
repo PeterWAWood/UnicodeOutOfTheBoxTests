@@ -83,6 +83,14 @@ if (unicodeString.replace('Treble', 'Bass') === '\uD834\uDD22 - The Bass Clef') 
 }
 
 title = 'Test 10';
+unicodeString = '\uD834\uDD22 - The Bass Clef';
+if (unicodeString.length === 17) {
+  passed += 1;
+} else {
+  failedTest();
+}
+
+title = 'Test 11';
 unicodeString = 'i';
 if (unicodeString.toUpperCase === '\u0130') {
   passed += 1;
@@ -90,7 +98,7 @@ if (unicodeString.toUpperCase === '\u0130') {
   failedTest();
 }
 
-title = 'Test 11';
+title = 'Test 12';
 unicodeString = 'I';
 if (unicodeString.toLowerCase === '\u0131') {
   passed += 1;
@@ -98,7 +106,7 @@ if (unicodeString.toLowerCase === '\u0131') {
   failedTest();
 }
 
-title = 'Test 12';
+title = 'Test 13';
 unicodeString = 'stra\u00DFe';
 if (unicodeString.toUpperCase === 'STRASSE') {
   paseed += 1;

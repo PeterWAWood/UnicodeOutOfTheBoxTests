@@ -1,0 +1,7 @@
+/Java$ java UnicodeTests
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Tests performed: 13
+Tests passed:    10
+Tests failed:    3
