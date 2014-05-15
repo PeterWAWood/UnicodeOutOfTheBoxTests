@@ -22,7 +22,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
     (This test is to see if the language provides flexibility)
 
-3.  Correct length of text containing decomposed characters
+3.  Length of text containing decomposed characters that have precomposed alternative
     Length of "noeU+0308l"
     The expected result is 4.
     U+0308 is UTF-8 CC 88
@@ -83,16 +83,26 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Upper case "straU+00DFe"
     The expected result is "STRASSE"
     U+00DF is UTF-8 C3 9F
+    
+14. Length of text with decomposed characters with no precomposed alternative
+    Length of "U+30C8U+3099"
+    The expected result is 1
+    U+30C8 is UTF-8 E3 83 88
+    U+3099 is UTF-8 E3 82 99
+    
+15. Length of text with decomposed characters and characters above BMP
+    Length of "eU+0308lU+1D11EU+30C8U+3099"
+    The expected result is 3
 ```
 
 ###The Results
 
 ```
 Language                                Score
-Java                               10 out of 13
-LiveCode 7                         10 out of 13
-JavaScript                          5 out of 13
-Ruby                                4 out of 13               These tests were written using UTF-8
+Java                               10 out of 15
+LiveCode 7                         12 out of 15
+JavaScript                          5 out of 15
+Ruby                                4 out of 15               These tests were written using UTF-8
 ```
 
 ###The Code and Detailed Results

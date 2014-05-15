@@ -1,11 +1,11 @@
-ruby UnicodeTests.rb
-Loaded suite UnicodeTests
+UnicodeOutOfTheBoxTests peter$ ruby ruby/UnicodeTests.rb
+Loaded suite ruby/UnicodeTests
 Started
 F
 ===============================================================================
 Failure:
 test_unicode_01(TestSource)
-UnicodeTests.rb:8:in `test_unicode_01'
+ruby/UnicodeTests.rb:8:in `test_unicode_01'
       5: class TestSource < Test::Unit::TestCase
       6: 
       7:   def test_unicode_01
@@ -24,7 +24,7 @@ diff:
 ===============================================================================
 Failure:
 test_unicode_03(TestSource)
-UnicodeTests.rb:16:in `test_unicode_03'
+ruby/UnicodeTests.rb:16:in `test_unicode_03'
      13:   end
      14:   
      15:   def test_unicode_03
@@ -43,7 +43,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_04(TestSource)
-UnicodeTests.rb:20:in `test_unicode_04'
+ruby/UnicodeTests.rb:20:in `test_unicode_04'
      17:   end
      18:   
      19:   def test_unicode_04
@@ -61,7 +61,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_05(TestSource)
-UnicodeTests.rb:24:in `test_unicode_05'
+ruby/UnicodeTests.rb:24:in `test_unicode_05'
      21:   end
      22:   
      23:   def test_unicode_05
@@ -79,7 +79,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_06(TestSource)
-UnicodeTests.rb:28:in `test_unicode_06'
+ruby/UnicodeTests.rb:28:in `test_unicode_06'
      25:   end
      26:   
      27:   def test_unicode_06
@@ -98,7 +98,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_07(TestSource)
-UnicodeTests.rb:32:in `test_unicode_07'
+ruby/UnicodeTests.rb:32:in `test_unicode_07'
      29:   end
      30:   
      31:   def test_unicode_07
@@ -117,7 +117,7 @@ diff:
 ===============================================================================
 Failure:
 test_unicode_11(TestSource)
-UnicodeTests.rb:52:in `test_unicode_11'
+ruby/UnicodeTests.rb:52:in `test_unicode_11'
      49:   
      50:   def test_unicode_11
      51:     # as far as I can tell there is no way to set the locale in Ruby
@@ -136,7 +136,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_12(TestSource)
-UnicodeTests.rb:56:in `test_unicode_12'
+ruby/UnicodeTests.rb:56:in `test_unicode_12'
      53:   end
      54:   
      55:   def test_unicode_12
@@ -155,14 +155,14 @@ F
 ===============================================================================
 Failure:
 test_unicode_13(TestSource)
-UnicodeTests.rb:60:in `test_unicode_13'
+ruby/UnicodeTests.rb:60:in `test_unicode_13'
      57:   end
      58:   
      59:   def test_unicode_13
   => 60:     assert_equal('STRASSE', "stra\xC3\x9Fe".upcase)
      61:   end
      62:   
-     63: end
+     63:   def test_unicode_14
 <"STRASSE"> expected but was
 <"STRAßE">
 
@@ -170,8 +170,49 @@ diff:
 ? STRASSE
 ?     ß 
 ===============================================================================
+F
+===============================================================================
+Failure:
+test_unicode_14(TestSource)
+ruby/UnicodeTests.rb:64:in `test_unicode_14'
+     61:   end
+     62:   
+     63:   def test_unicode_14
+  => 64:     assert_equal(1, "\xE3\x83\x88\xE3\x82\x99".length)
+     65:   end
+     66:   
+     67:   def test_unicode_15
+<1> expected but was
+<2>
+
+diff:
+? 1
+? 2
+===============================================================================
+F
+===============================================================================
+Failure:
+test_unicode_15(TestSource)
+ruby/UnicodeTests.rb:68:in `test_unicode_15'
+     65:   end
+     66:   
+     67:   def test_unicode_15
+  => 68:     assert_equal(3,"\xCC\x88\xF0\x9D\x84\x9E\xE3\x83\x88\xE3\x82\x99".length)
+     69:   end
+     70:   
+     71: end
+<3> expected but was
+<4>
+
+diff:
+? 3
+? 4
+===============================================================================
 
 
-Finished in 0.033649 seconds.
+Finished in 0.041271 seconds.
 
-13 tests, 13 assertions, 9 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+15 tests, 15 assertions, 11 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+26.6667% passed
+
+363.45 tests/s, 363.45 assertions/s

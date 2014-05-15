@@ -124,10 +124,26 @@ public class UnicodeTests {
       testFailed();
     }
     
+    testName = "Unicode 14";
+    unicodeString = "\u0308\u3099";
+    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 1) {
+      passed += 1;
+    } else {
+      testFailed();
+    }
+    
+    testName = "Unicode 15";
+    unicodeString = "\u0308l\uD834\uDD1E\u0308\u3099";
+    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 1) {
+      passed += 1;
+    } else {
+      testFailed();
+    }
+    
     System.out.println("Tests performed: " + (passed + failed));
     System.out.println("Tests passed:    " + passed);
     System.out.println("Tests failed:    " + failed);
-    
-  }
   
   }
+  
+}

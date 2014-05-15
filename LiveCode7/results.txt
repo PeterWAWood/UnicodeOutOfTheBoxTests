@@ -1,4 +1,5 @@
 Test Unicode11
+Test Unicode11
 Assert #1
 Expected İ
 Actual I
@@ -15,8 +16,8 @@ Actual MAß
 Unicode13 Failed
 
 Summary Test Results
-Number of Tests	13
-Number Passed 	10
+Number of Tests	15
+Number Passed 	12
 Number Failed  	3
 
 TEST FAILURES!!

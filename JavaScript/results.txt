@@ -16,9 +16,11 @@ Failed Test 10
 Failed Test 11
 Failed Test 12
 Failed Test 13
-Tests run  13
+Failed Test 14
+Failed Test 15
+Tests run  15
 Passed     5
-Failed     8
+Failed     10
 schulz:JavaScript peter$ jsc UnicodeTests.js
 Failed Test 1
 Failed Test 3
@@ -28,9 +30,11 @@ Failed Test 10
 Failed Test 11
 Failed Test 12
 Failed Test 13
-Tests run  13
+Failed Test 14
+Failed Test 15
+Tests run  15
 Passed     5
-Failed     8
+Failed     10
 schulz:JavaScript peter$ rhino UnicodeTests.js
 Failed Test 1
 Failed Test 3
@@ -40,9 +44,11 @@ Failed Test 10
 Failed Test 11
 Failed Test 12
 Failed Test 13
-Tests run  13
+Failed Test 14
+Failed Test 15
+Tests run  15
 Passed     5
-Failed     8
+Failed     10
 schulz:JavaScript peter$ js UnicodeTests.js
 Failed Test 1
 Failed Test 3
@@ -53,6 +59,8 @@ Failed Test 10
 Failed Test 11
 Failed Test 12
 Failed Test 13
-Tests run  13
+Failed Test 14
+Failed Test 15
+Tests run  15
 Passed     4
-Failed     9
+Failed     11
