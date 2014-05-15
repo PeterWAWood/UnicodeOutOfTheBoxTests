@@ -116,7 +116,7 @@ if (unicodeString.toUpperCase === 'STRASSE') {
 }
 
 title = 'Test 14';
-unicodeString = '\u0308\u3099';
+unicodeString = '\u03C8\u3099';
 if (unicodeString.length === 1) {
   pasesd += 1;
 } else {
@@ -124,7 +124,7 @@ if (unicodeString.length === 1) {
 }
 
 title = 'Test 15';
-unicodeString = '\u0308l\uD834\uDD1E\u0308\u3099';
+unicodeString = 'e\u0308\uD834\uDD1E\u03C8\u3099';
 if (unicodeString.length === 3) {
   passed += 1;
 } else {

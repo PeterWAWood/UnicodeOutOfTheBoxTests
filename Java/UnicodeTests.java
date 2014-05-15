@@ -125,7 +125,7 @@ public class UnicodeTests {
     }
     
     testName = "Unicode 14";
-    unicodeString = "\u0308\u3099";
+    unicodeString = "\u03C8\u3099";
     if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 1) {
       passed += 1;
     } else {
@@ -133,8 +133,8 @@ public class UnicodeTests {
     }
     
     testName = "Unicode 15";
-    unicodeString = "\u0308l\uD834\uDD1E\u0308\u3099";
-    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 1) {
+    unicodeString = "e\u0308\uD834\uDD1E\u03C8\u3099";
+    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 3) {
       passed += 1;
     } else {
       testFailed();

@@ -61,7 +61,7 @@ class TestSource < Test::Unit::TestCase
   end
   
   def test_unicode_14
-    assert_equal(1, "\xE3\x83\x88\xE3\x82\x99".length)
+    assert_equal(1, "e\xE3\x83\x88\xE3\x82\x99".length)
   end
   
   def test_unicode_15

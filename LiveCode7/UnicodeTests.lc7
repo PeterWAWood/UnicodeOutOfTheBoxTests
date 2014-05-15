@@ -195,7 +195,7 @@ on mouseUp
    
    startTest "Unicode15"
    # Length of string with decomposed characters and characters above BMP
-   put numToCodepoint(0x0308) into tUnicodeString
+   put "e" & numToCodepoint(0x0308) into tUnicodeString
    put numToCodepoint(0x1D11E) after tUnicodeString
    put numToCodepoint( 0x30C8) & numToCodepoint( 0x3099) after tUnicodeString
    assertEqual 3, the length of tUnicodeString

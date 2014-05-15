@@ -1,5 +1,4 @@
 Test Unicode11
-Test Unicode11
 Assert #1
 Expected İ
 Actual I

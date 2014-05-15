@@ -1,7 +1,7 @@
 UnicodeOutOfTheBoxTests
 =======================
 
-A short set of tests to give an indication of how well a language supports Unicode "Out of the Box".
+A short set of tests to give an indication of how well a language supports Unicode "Out of the Box". These tests only address basic string features and not text processing features such as end of word and paragraph support. 
 
 
 Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
@@ -98,11 +98,12 @@ In this context, "out of the box" means capabilities either built-in to the lang
 ###The Results
 
 ```
-Language                                Score
-Java                               10 out of 15
+Language                                Score             Comment
+Cocoa - Objective-C                15 out of 15           Needs to be run under OSX 10.8+
+Java                               10 out of 15           Code needs to be reviewed
 LiveCode 7                         12 out of 15
 JavaScript                          5 out of 15
-Ruby                                4 out of 15               These tests were written using UTF-8
+Ruby                                4 out of 15           Code need to be reviewed
 ```
 
 ###The Code and Detailed Results
