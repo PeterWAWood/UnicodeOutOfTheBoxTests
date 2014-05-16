@@ -1,3 +1,4 @@
+import java.text.BreakIterator;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.Locale;
@@ -12,7 +13,35 @@ public class UnicodeTests {
     failed += 1;
     System.out.println("Test " + testName + " failed");
   }
-  
+
+  static int countGraphemes(String input) {
+    BreakIterator graphemes = BreakIterator.getCharacterInstance();
+    graphemes.setText(input);
+    int n = 0;
+    while (graphemes.next() !=  BreakIterator.DONE) {
+        n++;
+    }
+    return n;
+  }
+
+  static String reverseGraphemes(String input) {
+    BreakIterator graphemes = BreakIterator.getCharacterInstance();
+    graphemes.setText(input);
+    StringBuilder result = new StringBuilder();
+    int end = graphemes.last();
+    int beg = graphemes.previous();
+    for (; beg != BreakIterator.DONE; end = beg, beg = graphemes.previous()) {
+        result.append(input.substring(beg, end));
+    }
+    return result.toString();
+  }
+
+  static String substringGraphemes(String input, int beg, int end) {
+    BreakIterator graphemes = BreakIterator.getCharacterInstance();
+    graphemes.setText(input);
+    return input.substring(graphemes.next(0), graphemes.next(end));
+  }
+
   public static void main(String[] args) {
     
     String unicodeString;
@@ -35,16 +64,14 @@ public class UnicodeTests {
     }
     
     testName = "Unicode 3";
-    unicodeString = "noe\u0308l";
-    if (unicodeString.codePointCount(0, unicodeString.length()) == 4) {
+    if (countGraphemes("noe\u0308l") == 4) {
       passed += 1;
     } else {
       testFailed();
     }
     
     testName = "Unicode 4";
-    unicodeString = new StringBuilder("noe\u0308l").reverse().toString();
-    if (unicodeString.equals("le\u0308on")) {
+    if (reverseGraphemes("noe\u0308l").equals("le\u0308on")) {
       passed += 1;
     } else {
       testFailed();
@@ -52,8 +79,8 @@ public class UnicodeTests {
     
     testName = "Unicode 5";
     unicodeString = "noe\u0308l";
-    if ((unicodeString.substring(0,3).equals("noe\u0308")) &&
-        (unicodeString.substring(0,3).length() == 3)) {
+    if (substringGraphemes(unicodeString, 0, 3).equals("noe\u0308")
+            && countGraphemes(substringGraphemes(unicodeString, 0, 3)) == 3) {
       passed += 1;
     } else {
       testFailed();
@@ -126,7 +153,7 @@ public class UnicodeTests {
     
     testName = "Unicode 14";
     unicodeString = "\u03C8\u3099";
-    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 1) {
+    if (countGraphemes(Normalizer.normalize(unicodeString, Normalizer.Form.NFC)) == 1) {
       passed += 1;
     } else {
       testFailed();
@@ -134,7 +161,7 @@ public class UnicodeTests {
     
     testName = "Unicode 15";
     unicodeString = "e\u0308\uD834\uDD1E\u03C8\u3099";
-    if (Normalizer.normalize(unicodeString, Normalizer.Form.NFC).length() == 3) {
+    if (countGraphemes(Normalizer.normalize(unicodeString, Normalizer.Form.NFC)) == 3) {
       passed += 1;
     } else {
       testFailed();
