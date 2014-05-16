@@ -6,9 +6,12 @@ Things to note:
 
   - "prove" comes with Perl.
   - I've included an extra "fold case" test in with above tests.
+  - perl 5.16+ comes with "fc" (fold case)
+  - perl 5.12+ required for unicode_strings feature
 
 
 For tests that pass the two Turkish tests...
 
     $ prove turkish-pass-tests.t
+
 

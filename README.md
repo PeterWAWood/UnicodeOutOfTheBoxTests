@@ -103,6 +103,7 @@ Cocoa - Objective-C                15 out of 15           Needs to be run under 
 Java                               15 out of 15
 LiveCode 7                         12 out of 15
 JavaScript                          5 out of 15
+Perl                               14 out of 16           Extra fold case test added
 Python 3                           10 out of 15
 Ruby                                4 out of 15           15 out of 15 with UnicodeUtils Gem 
 ```
