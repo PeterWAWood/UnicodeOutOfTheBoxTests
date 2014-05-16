@@ -100,7 +100,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
 ```
 Language                                Score             Comment
 Cocoa - Objective-C                15 out of 15           Needs to be run under OSX 10.8+
-Java                               10 out of 15           Code needs to be reviewed
+Java                               15 out of 15
 LiveCode 7                         12 out of 15
 JavaScript                          5 out of 15
 Ruby                                4 out of 15           Code need to be reviewed
