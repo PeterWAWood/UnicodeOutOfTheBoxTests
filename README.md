@@ -104,7 +104,7 @@ Java                               15 out of 15
 LiveCode 7                         12 out of 15
 Python 3                           10 out of 15
 JavaScript                          5 out of 15
-Ruby                                4 out of 15           Code need to be reviewed
+Ruby                                4 out of 15           Would be 15/15 with Unicode Gem 
 ```
 
 ###The Code and Detailed Results
