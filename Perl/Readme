@@ -1,0 +1,14 @@
+To run tests...
+
+    $ prove unicode-tests.t
+
+Things to note:
+
+  - "prove" comes with Perl.
+  - I've included an extra "fold case" test in with above tests.
+
+
+For tests that pass the two Turkish tests...
+
+    $ prove turkish-pass-tests.t
+
