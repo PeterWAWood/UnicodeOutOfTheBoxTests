@@ -91,7 +91,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     U+3099 is UTF-8 E3 82 99
     
 15. Length of text with decomposed characters and characters above BMP
-    Length of "eU+0308lU+1D11EU+30C8U+3099"
+    Length of "eU+0308U+1D11EU+30C8U+3099"
     The expected result is 3
 ```
 
