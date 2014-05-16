@@ -1,0 +1,21 @@
+unicode-tests.t .. 1/16 
+#   Failed test 'Unicode 11'
+#   at unicode-tests.t line 50.
+#          got: 'I'
+#     expected: 'İ'
+
+#   Failed test 'Unicode 12'
+#   at unicode-tests.t line 51.
+#          got: 'i'
+#     expected: 'ı'
+# Looks like you failed 2 tests of 16.
+unicode-tests.t .. Dubious, test returned 2 (wstat 512, 0x200)
+Failed 2/16 subtests 
+
+Test Summary Report
+-------------------
+unicode-tests.t (Wstat: 512 Tests: 16 Failed: 2)
+  Failed tests:  11-12
+  Non-zero exit status: 2
+Files=1, Tests=16,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.05 cusr  0.00 csys =  0.09 CPU)
+Result: FAIL
