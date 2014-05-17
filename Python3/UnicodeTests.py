@@ -35,15 +35,16 @@ class UnicodeTests(unittest.TestCase):
 
     def test_03(self):
         # That's probably cheating a bit and should use grapheme clustering.
+        # However, proper grapheme clustering is covered by tests 14 & 15.
         self.assertEqual(len(nfc('noe\u0308l')), 4)
 
     def test_04(self):
-        # That's probably cheating a bit and should use grapheme clustering.
+        # See remark on test_03.
         self.assertEqual(nfd(''.join(reversed(nfc('noe\u0308l')))),
                          'le\u0308on')
 
     def test_05(self):
-        # That's probably cheating a bit and should use grapheme clustering.
+        # See remark on test_03.
         self.assertEqual(nfd(nfc('noe\u0308l')[:3]), 'noe\u0308')
 
     def test_06(self):
@@ -83,7 +84,7 @@ class UnicodeTests(unittest.TestCase):
         self.assertEqual(len('\u30C8\u3099'), 1)
 
     def test_15(self):
-        # See test_14.
+        # See remark on test_14.
         self.assertEqual(len('e\u3081\U0001D11E\u30C8\u3099'), 3)
 
 
