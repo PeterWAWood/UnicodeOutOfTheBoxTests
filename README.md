@@ -109,7 +109,7 @@ Java                          15 out of 15
 LiveCode 7                    12 out of 15
 JavaScript                     5 out of 15
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
-Python 3                      10 out of 15
+Python 3                      12 out of 16
 Ruby                           4 out of 15      15 out of 15 with UnicodeUtils Gem 
 ```
 
