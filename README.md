@@ -93,19 +93,24 @@ In this context, "out of the box" means capabilities either built-in to the lang
 15. Length of text with decomposed characters and characters above BMP
     Length of "eU+0308U+1D11EU+30C8U+3099"
     The expected result is 3
+    
+16. Performing case insensitive comparison
+    Compare "weiss" with "weiß"
+    The expected result is true
+    ß is U+00DF, UTF-8 C3 9F
 ```
 
 ###The Results
 
 ```
-Language                                Score             Comment
-Cocoa - Objective-C                15 out of 15           Needs to be run under OSX 10.8+
-Java                               15 out of 15
-LiveCode 7                         12 out of 15
-JavaScript                          5 out of 15
-Perl                               14 out of 16           Extra fold case test added
-Python 3                           10 out of 15
-Ruby                                4 out of 15           15 out of 15 with UnicodeUtils Gem 
+Language                          Score         Comment
+Cocoa - Objective-C           16 out of 16      Needs to be run under OSX 10.8+
+Java                          15 out of 15
+LiveCode 7                    12 out of 15
+JavaScript                     5 out of 15
+Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
+Python 3                      10 out of 15
+Ruby                           4 out of 15      15 out of 15 with UnicodeUtils Gem 
 ```
 
 ###The Code and Detailed Results

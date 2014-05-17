@@ -38,6 +38,7 @@ int main(int argc, const char * argv[])
         int position;
         int elements;
         NSLocale *turkish = [[NSLocale alloc] initWithLocaleIdentifier:@"tr_TR"];
+        NSLocale *german = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
         
         testName = @"Unicode  1";
         unicodeString = @"c\u0327";
@@ -157,9 +158,9 @@ int main(int argc, const char * argv[])
         unicodeString = @"I";
         if ([[unicodeString lowercaseStringWithLocale:turkish] isEqualToString:@"\u0131"]) {
          passed += 1;
-         } else {
+        } else {
          testFailed();
-         }
+        }
         
         testName = @"Unicode 13";
         unicodeString = @"stra\u00DFe";
@@ -180,6 +181,17 @@ int main(int argc, const char * argv[])
         testName = @"Unicode 15";
         unicodeString = @"e\u0308\U0001D11E\u03C8\u3099";
         if (countGraphemeClusters(unicodeString) == 3) {
+            passed += 1;
+        } else {
+            testFailed();
+        }
+        
+        testName = @"Unicode 16";
+        unicodeString = @"wei\u00DF";
+        if (NSOrderedSame == [unicodeString compare:@"weiss"
+                                            options:NSCaseInsensitiveSearch
+                                              range:NSMakeRange(0, [unicodeString length])
+                                             locale:german]) {
             passed += 1;
         } else {
             testFailed();
