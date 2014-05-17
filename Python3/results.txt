@@ -1,10 +1,9 @@
-Python3$ python3 UnicodeTests.py
-..........FF.FF
+..........FF.FF.
 ======================================================================
 FAIL: test_11 (__main__.UnicodeTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "UnicodeTests.py", line 72, in test_11
+  File "UnicodeTests.py", line 73, in test_11
     self.assertEqual('i'.upper(), 'İ')
 AssertionError: 'I' != 'İ'
 - I
@@ -15,7 +14,7 @@ AssertionError: 'I' != 'İ'
 FAIL: test_12 (__main__.UnicodeTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "UnicodeTests.py", line 76, in test_12
+  File "UnicodeTests.py", line 77, in test_12
     self.assertEqual('I'.lower(), 'ı')
 AssertionError: 'i' != 'ı'
 - i
@@ -26,7 +25,7 @@ AssertionError: 'i' != 'ı'
 FAIL: test_14 (__main__.UnicodeTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "UnicodeTests.py", line 83, in test_14
+  File "UnicodeTests.py", line 84, in test_14
     self.assertEqual(len('\u30C8\u3099'), 1)
 AssertionError: 2 != 1
 
@@ -34,11 +33,11 @@ AssertionError: 2 != 1
 FAIL: test_15 (__main__.UnicodeTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "UnicodeTests.py", line 87, in test_15
+  File "UnicodeTests.py", line 88, in test_15
     self.assertEqual(len('e\u3081\U0001D11E\u30C8\u3099'), 3)
 AssertionError: 5 != 3
 
 ----------------------------------------------------------------------
-Ran 15 tests in 0.002s
+Ran 16 tests in 0.001s
 
 FAILED (failures=4)

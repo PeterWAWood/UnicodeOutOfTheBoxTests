@@ -87,6 +87,9 @@ class UnicodeTests(unittest.TestCase):
         # See remark on test_14.
         self.assertEqual(len('e\u3081\U0001D11E\u30C8\u3099'), 3)
 
+    def test_16(self):
+        self.assertEqual('weiß'.casefold(), 'weiss')
+
 
 if __name__ == '__main__':
     unittest.main()
