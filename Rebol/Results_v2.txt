@@ -1,0 +1,65 @@
+
+   ==================
+   = (R)EBOL-(Un)it =
+   = Test Framework =
+   =     v.1.9      =
+   ==================
+
+== OUTPUT ===============================================
+
+
+> UnicodeTests.test.r
+       >> test-1
+        *-> Data expected: true of type: [logic!]
+             but was : false of type: [logic!]
+       >> test-2
+        *-> Data expected: true of type: [logic!]
+             but was : false of type: [logic!]
+       >> test-3
+        *-> Data expected: 4 of type: [integer!]
+             but was : 6 of type: [integer!]
+       >> test-4
+        *-> Data expected: "lëon" of type: [string!]
+             but was : "l��eon" of type: [string!]
+       >> test-5
+        *-> Data expected: "noë" of type: [string!]
+             but was : "noe" of type: [string!]
+       >> test-6
+        *-> Data expected: "BAFFLE" of type: [string!]
+             but was : "BAϬ�E" of type: [string!]
+       >> test-7
+        *-> Data expected: "CANTÙ" of type: [string!]
+             but was : "CANTù" of type: [string!]
+       >> test-8
+        --> Passed in <0:00:00.000003>
+       >> test-9
+        --> Passed in <0:00:00.000016>
+       >> test-10
+        *-> Data expected: 17 of type: [integer!]
+             but was : 19 of type: [integer!]
+       >> test-11
+        *-> Data expected: "İ" of type: [string!]
+             but was : "I" of type: [string!]
+       >> test-12
+        *-> Data expected: "ı" of type: [string!]
+             but was : "i" of type: [string!]
+       >> test-13
+        *-> Data expected: "STRASSE" of type: [string!]
+             but was : "STRAßE" of type: [string!]
+       >> test-14
+        *-> Data expected: 1 of type: [integer!]
+             but was : 6 of type: [integer!]
+       >> test-15
+        *-> Data expected: 3 of type: [integer!]
+             but was : 13 of type: [integer!]
+
+== TEST REPORT ==========================================
+
+ TOTAL : 15
+     => Passed   : 2
+     => Failures : 13
+     => Errors   : 0
+
+=========================================================
+
+End of test
