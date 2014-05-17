@@ -1,4 +1,5 @@
 import java.text.BreakIterator;
+import java.text.Collator;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.Locale;
@@ -46,6 +47,7 @@ public class UnicodeTests {
     
     String unicodeString;
     Locale turkish = new Locale("tr", "TR");
+    Locale german = new Locale("de", "DE");
     
     testName = "Unicode 1";
     unicodeString = "c\u0327";
@@ -162,6 +164,14 @@ public class UnicodeTests {
     testName = "Unicode 15";
     unicodeString = "e\u0308\uD834\uDD1E\u03C8\u3099";
     if (countGraphemes(Normalizer.normalize(unicodeString, Normalizer.Form.NFC)) == 3) {
+      passed += 1;
+    } else {
+      testFailed();
+    }
+    
+    testName = "Unicode 16";
+    Collator deCollator = Collator.getInstance(german);
+    if (deCollator.compare("weiss", "weiß") == 0) {
       passed += 1;
     } else {
       testFailed();
