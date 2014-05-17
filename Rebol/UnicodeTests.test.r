@@ -32,7 +32,7 @@ test-2: func [
 ][
 	assert-equal
 		"ç" == "ç"
-		true
+		false
 ]
 
 test-3: func [
