@@ -13,10 +13,15 @@ Assert #1
 Expected MASS
 Actual MAß
 Unicode13 Failed
+Test Unicode16
+Assert #1
+Expected weiss
+Actual weiß
+Unicode16 Failed
 
 Summary Test Results
-Number of Tests	15
+Number of Tests	16
 Number Passed 	12
-Number Failed  	3
+Number Failed  	4
 
 TEST FAILURES!!

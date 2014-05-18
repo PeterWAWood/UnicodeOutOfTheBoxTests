@@ -199,7 +199,13 @@ on mouseUp
    put numToCodepoint(0x1D11E) after tUnicodeString
    put numToCodepoint( 0x30C8) & numToCodepoint( 0x3099) after tUnicodeString
    assertEqual 3, the length of tUnicodeString
-   endTest 
+   endTest
+   
+   startTest "Unicode16"
+   # Case folding "weiss" = "weiß"
+   put "wei" & numToCodepoint(0xDF) into  tUnicodeString
+   assertEqual "weiss", tUnicodeString
+   endTest
    
    # display summary
    endTestRun
