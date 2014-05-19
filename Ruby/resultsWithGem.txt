@@ -1,11 +1,11 @@
-Schulz:Ruby peter$ ruby UnicodeTestsWithGem.rb
-Loaded suite UnicodeTestsWithGem
+ruby ruby/UnicodeTestsWithGem.rb
+Loaded suite ruby/UnicodeTestsWithGem
 Started
-...............
+................
 
-Finished in 0.017932 seconds.
+Finished in 0.011529 seconds.
 
-15 tests, 15 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+16 tests, 16 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
 100% passed
 
-836.49 tests/s, 836.49 assertions/s
+1387.80 tests/s, 1387.80 assertions/s

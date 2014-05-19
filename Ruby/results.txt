@@ -1,4 +1,4 @@
-UnicodeOutOfTheBoxTests peter$ ruby ruby/UnicodeTests.rb
+peter$ ruby ruby/UnicodeTests.rb
 Loaded suite ruby/UnicodeTests
 Started
 F
@@ -197,22 +197,22 @@ ruby/UnicodeTests.rb:68:in `test_unicode_15'
      65:   end
      66:   
      67:   def test_unicode_15
-  => 68:     assert_equal(3,"\xCC\x88\xF0\x9D\x84\x9E\xE3\x83\x88\xE3\x82\x99".length)
+  => 68:     assert_equal(3,"e\xCC\x88\xF0\x9D\x84\x9E\xE3\x83\x88\xE3\x82\x99".length)
      69:   end
      70:   
-     71: end
+     71:   def test_unicode_16
 <3> expected but was
-<4>
+<5>
 
 diff:
 ? 3
-? 4
+? 5
 ===============================================================================
+.
 
+Finished in 0.055723 seconds.
 
-Finished in 0.041271 seconds.
+16 tests, 16 assertions, 11 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+31.25% passed
 
-15 tests, 15 assertions, 11 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
-26.6667% passed
-
-363.45 tests/s, 363.45 assertions/s
+287.13 tests/s, 287.13 assertions/s

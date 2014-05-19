@@ -2,6 +2,7 @@
 
 require 'test/unit'
 require 'unicode_utils/canonical_equivalents_q'
+require "unicode_utils/casefold"
 require 'unicode_utils/downcase'
 require 'unicode_utils/each_grapheme'
 require 'unicode_utils/upcase'
@@ -77,6 +78,10 @@ class TestSource < Test::Unit::TestCase
   
   def test_unicode_15
     assert_equal(3,UnicodeUtils.each_grapheme("e\xCC\x88\xF0\x9D\x84\x9E\xE3\x83\x88\xE3\x82\x99").count)
+  end
+  
+  def test_unicode_16
+    assert_equal(UnicodeUtils.casefold("weiss"), UnicodeUtils.casefold("weiß"))
   end
   
 end

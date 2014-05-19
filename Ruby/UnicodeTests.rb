@@ -68,4 +68,7 @@ class TestSource < Test::Unit::TestCase
     assert_equal(3,"e\xCC\x88\xF0\x9D\x84\x9E\xE3\x83\x88\xE3\x82\x99".length)
   end
   
+  def test_unicode_16
+    assert("wei\xC3\x9Fe".casecmp("weiss"))
+  end
 end
