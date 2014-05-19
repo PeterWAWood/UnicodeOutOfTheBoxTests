@@ -1,0 +1,7 @@
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 6 failed
+Test Unicode 7 failed
+Test Unicode 8 failed
+Test Unicode 10 failed
+passed 4, failed 6
