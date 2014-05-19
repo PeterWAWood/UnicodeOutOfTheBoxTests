@@ -131,6 +131,14 @@ if (unicodeString.length === 3) {
   testFailed();
 }
 
+title = 'Test 16';
+if ('wei\u00DF'.match(/weiss/i)) {
+ passed += 1;
+} else {
+  testFailed();
+}
+
+
 print('Tests run  ' + (passed + failed));
 print('Passed     ' + passed);
 print('Failed     ' + failed);
