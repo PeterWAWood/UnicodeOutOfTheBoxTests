@@ -10,12 +10,6 @@
 
 int passed = 0;
 int failed = 0;
-NSString *testName;
-
-void testFailed() {
-    failed += 1;
-    printf("Test %s Failed\n", [testName UTF8String]);
-}
 
 int countGraphemeClusters(NSString *str) {
     int graphemeClusterCount = 0;
@@ -23,6 +17,15 @@ int countGraphemeClusters(NSString *str) {
         i += [str rangeOfComposedCharacterSequenceAtIndex:i].length;
     }
     return graphemeClusterCount;
+}
+
+void test(NSString *name, BOOL result) {
+    if (result) {
+        passed++;
+    } else {
+        failed++;
+        printf("Test %s Failed\n", [name UTF8String]);
+    }
 }
 
 int main(int argc, const char * argv[])
@@ -40,31 +43,12 @@ int main(int argc, const char * argv[])
         NSLocale *turkish = [[NSLocale alloc] initWithLocaleIdentifier:@"tr_TR"];
         NSLocale *german = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
         
-        testName = @"Unicode  1";
-        unicodeString = @"c\u0327";
-        if ([unicodeString isEqualToString:[@"\u00E7" decomposedStringWithCanonicalMapping]]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-        
-        testName = @"Unicode 2";
-        unicodeString = @"c\u0327";
-        if (![unicodeString isEqualToString:@"\u00E7"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-        
-        testName = @"Unicode 3";
-        unicodeString = @"noe\u0308l";
-        if (countGraphemeClusters(unicodeString) == 4) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode  1", [@"c\u0327" isEqualToString:[@"\u00E7" decomposedStringWithCanonicalMapping]]);
 
-        testName = @"Unicode 4";
+        test(@"Unicode 2", ![@"c\u0327" isEqualToString:@"\u00E7"]);
+        
+        test(@"Unicode 3", countGraphemeClusters(@"noe\u0308l") == 4);
+        
         unicodeString = @"noe\u0308l";
         position = 0;
         elements = -1;
@@ -77,13 +61,8 @@ int main(int argc, const char * argv[])
         for (int i = elements; i > -1; i--) {
             [reversed appendString:[unicodeString substringWithRange:[[graphemeClusters objectAtIndex:i] rangeValue]]];
         }
-        if ([reversed isEqualToString:@"le\u0308on"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-        
-        testName = @"Unicode 5";
+        test(@"Unicode 4", [reversed isEqualToString:@"le\u0308on"]);
+
         unicodeString = @"noe\u0308l";
         elements = 3;
         for (position = 0; (position < 3) && (position < [unicodeString length]); ++elements) {
@@ -91,37 +70,15 @@ int main(int argc, const char * argv[])
         }
         substrRange.location = 0;
         substrRange.length = position;
-        if ([[unicodeString substringWithRange:substrRange] isEqualToString:@"noe\u0308"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-    
-        testName = @"Unicode 6";
-        unicodeString = @"ba\uFB04e";
-        if ([[unicodeString uppercaseString] isEqualToString: @"BAFFLE"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 5", [[unicodeString substringWithRange:substrRange]
+                            isEqualToString:@"noe\u0308"]);
+             
+        test(@"Unicode 6", [[@"ba\uFB04e" uppercaseString] isEqualToString: @"BAFFLE"]);
         
-        testName = @"Unicode 7";
-        unicodeString = @"cant\u00F9";
-        if ([[unicodeString uppercaseString] isEqualToString:@"CANT\u00D9"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 7", [[@"cant\u00F9" uppercaseString] isEqualToString:@"CANT\u00D9"]);
         
-        testName = @"Unicode 8";
-        unicodeString = @"cantu\u0300";
-        if ([[unicodeString uppercaseString] isEqualToString:@"CANTU\u0300"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 8", [[@"cantu\u0300" uppercaseString] isEqualToString:@"CANTU\u0300"]);
         
-        testName = @"Unicode 9";
         unicodeString = @"\U0001D11E - The Treble Clef";
         [changed setString:unicodeString];
         [changed replaceOccurrencesOfString:@"\U0001D11E"
@@ -132,71 +89,26 @@ int main(int argc, const char * argv[])
                                  withString:@"Bass"
                                     options:0
                                       range:NSMakeRange(0, [unicodeString length])];
-        if ([changed isEqualToString:@"\U0001D122 - The Bass Clef"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 9", [changed isEqualToString:@"\U0001D122 - The Bass Clef"]);
         
-        testName = @"Unicode 10";
-        unicodeString = @"\U0001D122 - The Bass Clef";
-        if (countGraphemeClusters(unicodeString) == 17) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 10", countGraphemeClusters(@"\U0001D122 - The Bass Clef") == 17);
         
-        testName = @"Unicode 11";
-        unicodeString = @"i";
-        if ([[unicodeString uppercaseStringWithLocale:turkish] isEqualToString:@"\u0130"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 11", [[@"i" uppercaseStringWithLocale:turkish] isEqualToString:@"\u0130"]);
+                
+        test(@"Unicode 12", [[@"I" lowercaseStringWithLocale:turkish] isEqualToString:@"\u0131"]);
         
-        testName = @"Unicode 12";
-        unicodeString = @"I";
-        if ([[unicodeString lowercaseStringWithLocale:turkish] isEqualToString:@"\u0131"]) {
-         passed += 1;
-        } else {
-         testFailed();
-        }
+        test(@"Unicode 13", [[@"stra\u00DFe" uppercaseString] isEqualToString:@"STRASSE"]);
         
-        testName = @"Unicode 13";
-        unicodeString = @"stra\u00DFe";
-        if ([[unicodeString uppercaseString] isEqualToString:@"STRASSE"]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 14", countGraphemeClusters(@"\u03C8\u3099") == 1);
         
-        testName = @"Unicode 14";
-        unicodeString = @"\u03C8\u3099";
-        if (countGraphemeClusters(unicodeString) == 1) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
+        test(@"Unicode 15", countGraphemeClusters(@"e\u0308\U0001D11E\u03C8\u3099") == 3);
         
-        testName = @"Unicode 15";
-        unicodeString = @"e\u0308\U0001D11E\u03C8\u3099";
-        if (countGraphemeClusters(unicodeString) == 3) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-        
-        testName = @"Unicode 16";
-        unicodeString = @"wei\u00DF";
-        if (NSOrderedSame == [unicodeString compare:@"weiss"
-                                            options:NSCaseInsensitiveSearch
-                                              range:NSMakeRange(0, [unicodeString length])
-                                             locale:german]) {
-            passed += 1;
-        } else {
-            testFailed();
-        }
-        
+        test(@"Unicode 16", NSOrderedSame == [@"wei\u00DF" compare:@"weiss"
+                                                            options:NSCaseInsensitiveSearch
+                                                              range:NSMakeRange(
+                                                                    0,                                                            [@"wei\u00DF" length])
+                                                            locale:german]);
+       
         printf("Number of Tests: %d\n", passed + failed);
         printf("Number Passed:   %d\n", passed);
         printf("Number Failed:   %d\n", failed);
