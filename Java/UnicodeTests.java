@@ -10,11 +10,6 @@ public class UnicodeTests {
   static int failed = 0;
   static String testName;
   
-  static void testFailed() {
-    failed += 1;
-    System.out.println("Test " + testName + " failed");
-  }
-  
   static void test(String name, boolean result) {
     if (result) {
       passed++;
@@ -97,7 +92,6 @@ public class UnicodeTests {
                           Normalizer.normalize("e\u0308\uD834\uDD1E\u03C8\u3099", 
                           Normalizer.Form.NFC)) == 3); 
     
-
     Collator deCollator = Collator.getInstance(german);
     test("Unicode 16", deCollator.compare("weiss", "weiß") == 0);
     

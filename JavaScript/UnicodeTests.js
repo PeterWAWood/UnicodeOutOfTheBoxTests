@@ -9,135 +9,51 @@ var testFailed = function testFailed() {
   print('Failed ' + title);
 };
 
-title = 'Test 1';
-unicodeString = 'c\u0327';
-if (unicodeString === '\u00E7') {
-  passed += 1;
-} else {
-  testFailed();  
-}
+var test = function test(name, result) {
+  if (result) {
+    passed++;
+  } else {
+    failed++;
+    print('Test ' + name + ' failed');
+  }
+};
 
-title = 'Test 2';
-unicodeString = 'c\u0327';
-if (unicodeString !== '\u00E7') {
-  passed += 1;
-} else {
-  testFailed();  
-}
+test('Unicode 1', 'c\u0327' === '\u00E7');
 
-title = 'Test 3';
-unicodeString = 'noe\u0308l';
-if (unicodeString.length === 4) {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 2', 'c\u0327' !== '\u00E7');
 
-title = 'Test 4';
-unicodeString = 'noe\u0308l';
-if (unicodeString.split('').reverse().join('') === 'le\u0308on') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 3', 'noe\u0308l'.length === 4);
 
-title = 'Test 5';
-unicodeString = 'noe\u0308l';
-if (unicodeString.slice(0,2) === 'noe\u0308') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 4', 'noe\u0308l'.split('').reverse().join('') === 'le\u0308on');
 
-title = 'Test 6';
-unicodeString = 'ba\uFB04e';
-if (unicodeString.toUpperCase() === 'BAFFLE') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 5', 'noe\u0308l'.slice(0,2) === 'noe\u0308');
 
-title = 'Test 7';
-unicodeString = 'cant\u00F9';
-if (unicodeString.toUpperCase() === 'CANT\u00D9') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 6', 'ba\uFB04e'.toUpperCase() === 'BAFFLE');
 
-title = 'Test 8';
-unicodeString = 'cantu\u0300';
-if (unicodeString.toUpperCase() === 'CANTU\u0300') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 7', 'cant\u00F9'.toUpperCase() === 'CANT\u00D9');
 
-title = 'Test 9';
+test('Unicode 8', 'cantu\u0300'.toUpperCase() === 'CANTU\u0300');
+
+
 unicodeString = '\uD834\uDD1E - The Treble Clef';
 unicodeString = unicodeString.replace('\uD834\uDD1E', '\uD834\uDD22');
-if (unicodeString.replace('Treble', 'Bass') === '\uD834\uDD22 - The Bass Clef') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 9', unicodeString.replace('Treble', 'Bass') === 
+                                        '\uD834\uDD22 - The Bass Clef');
 
-title = 'Test 10';
-unicodeString = '\uD834\uDD22 - The Bass Clef';
-if (unicodeString.length === 17) {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 10', '\uD834\uDD22 - The Bass Clef'.length === 17);
 
-title = 'Test 11';
 // As far as I can tell there is no way to swet the locale or language in JavaScript
-unicodeString = 'i';
-if (unicodeString.toUpperCase === '\u0130') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 11', 'i'.toUpperCase === '\u0130');
 
-title = 'Test 12';
-unicodeString = 'I';
-if (unicodeString.toLowerCase === '\u0131') {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 12', 'I'.toLowerCase === '\u0131');
 
-title = 'Test 13';
-unicodeString = 'stra\u00DFe';
-if (unicodeString.toUpperCase === 'STRASSE') {
-  paseed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 13', 'stra\u00DFe'.toUpperCase === 'STRASSE');
 
-title = 'Test 14';
-unicodeString = '\u03C8\u3099';
-if (unicodeString.length === 1) {
-  pasesd += 1;
-} else {
-  testFailed();
-}
+test('Unicode 14', '\u03C8\u3099'.length === 1);
 
-title = 'Test 15';
-unicodeString = 'e\u0308\uD834\uDD1E\u03C8\u3099';
-if (unicodeString.length === 3) {
-  passed += 1;
-} else {
-  testFailed();
-}
+test('Unicode 15', 'e\u0308\uD834\uDD1E\u03C8\u3099'.length === 3);
 
-title = 'Test 16';
-if ('wei\u00DF'.match(/weiss/i)) {
- passed += 1;
-} else {
-  testFailed();
-}
-
+test('Unicode 16', 'wei\u00DF'.match(/weiss/i));
 
 print('Tests run  ' + (passed + failed));
 print('Passed     ' + passed);
