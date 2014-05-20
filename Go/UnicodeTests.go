@@ -8,34 +8,16 @@ import "strings"
 var passed int = 0
 var failed int = 0
 
-// This function taken from rosettacode.org
-// reversePreservingCombiningCharacters interprets its argument as UTF-8
-// and ignores bytes that do not form valid UTF-8.  return value is UTF-8.
-func reversePreservingCombiningCharacters(s string) string {
-    if s == "" {
-        return ""
-    }
-    p := []rune(s)
-    r := make([]rune, len(p))
-    start := len(r)
+func reverse(s string) string {
+    p := []rune(s);
+    r := make([]rune, len(p));
+    j := len(p);
     for i := 0; i < len(p); {
-        // quietly skip invalid UTF-8
-        if p[i] == utf8.RuneError {
-            i++
-            continue
-        }
-        j := i + 1
-        for j < len(p) && (unicode.Is(unicode.Mn, p[j]) ||
-            unicode.Is(unicode.Me, p[j]) || unicode.Is(unicode.Mc, p[j])) {
-            j++
-        }
-        for k := j - 1; k >= i; k-- {
-            start--
-            r[start] = p[k]
-        }
-        i = j
+      j--;
+      r[i] = p[j]
+      i++;
     }
-    return (string(r[start:]))
+    return (string(r[0:]))
 }
 
 func substring(s string, start int, count int) string {
@@ -75,9 +57,9 @@ func main() {
   
   test("Unicode 3", utf8.RuneCountInString("noe\u0308l") == 4);
   
-  test("Unicode 4", "le\u0308on" == reversePreservingCombiningCharacters("noe\u0308l"));
+  test("Unicode 4", "le\u0308on" == reverse("noe\u0308l"));
   
-  test("Unicode 5", substring("noe\u0308l", 0, 3) == "noe\u0308");
+  test("Unicode 5", "noe\u0308l"[0:3] == "noe\u0308");
     
   test("Unicode 6", strings.ToUpper("ba\uFB04e") == "BAFFLE");
   
@@ -90,7 +72,19 @@ func main() {
   unicodeString = strings.Replace(unicodeString, "Treble", "Bass", 1);  
   test("Unicode 9", unicodeString == "\u1D122 - The Bass Clef");
     
-  test("Unicode 10", utf8.RuneCountInString("\u1D122 - The Bass Clef") == 17);  
+  test("Unicode 10", utf8.RuneCountInString("\u1D122 - The Bass Clef") == 17); 
   
+  test("Unicode 11", "\u0130" == strings.ToUpperSpecial(unicode.TurkishCase, "i"));
+  
+  test("Unicode 12", "\u0131" == strings.ToLowerSpecial(unicode.TurkishCase, "I"));
+  
+  test("Unicode 13", "STRASSE" == strings.ToUpper("stra\u00DFe"));
+  
+  test("Unicode 14", utf8.RuneCountInString("\u03C8\u3099") == 1);
+  
+  test("Unicode 15", utf8.RuneCountInString("e\u0308\u1D11E\u03C8\u3099") == 3);
+  
+  test("Unicode 16", strings.EqualFold("weiss", "wei\u00DF"));
+   
   fmt.Printf("passed %d, failed %d\n", passed, failed);
 }
