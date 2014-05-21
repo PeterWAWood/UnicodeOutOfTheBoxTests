@@ -20,26 +20,6 @@ func reverse(s string) string {
     return (string(r[0:]))
 }
 
-func substring(s string, start int, count int) string {
-  p := []rune(s);
-  r := make([]rune, len(p));
-  copied := 0;
-  runes_copied := 0;
-  for i := start; i < len(p) && copied < count; {
-    r[i] = p[i];
-    i++;
-    runes_copied++;
-    copied += 1;
-    for i < len(p) && (unicode.Is(unicode.Mn, p[i]) ||
-            unicode.Is(unicode.Me, p[i]) || unicode.Is(unicode.Mc, p[i])) {
-      r[i] = p[i];
-      i++
-      runes_copied++;
-    }
-  }
-  return(string(r[start:runes_copied]));
-}
-
 func test(name string, result bool) {
   if result {
     passed += 1;
