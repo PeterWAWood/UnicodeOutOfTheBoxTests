@@ -1,0 +1,25 @@
+Testing...
+... test 1 failed ["ç" == "ç"]
+... test 3 failed [(length? "noël") = 4]
+... test 4 failed [(reverse "l̈eon") == "lëon"]
+... test 5 failed [(copy/part "noël" 3) == "noë"]
+... test 6 failed [(uppercase "BAﬄE") == "BAFFLE"]
+... test 9 failed [
+    use [got expected] [
+        got: "턞 - The Treble Clef"
+        expected: "턢 - The Bass Clef"
+        got: to-string replace replace to-binary got #{F09D849E} #{F09D84A2} "Treble" "Bass"
+        got == expected
+    ]
+]
+... test 10 failed [
+    (length? "턢 - The Bass Clef") == 17
+    false
+]
+... test 11 failed [(uppercase "I") == "İ"]
+... test 12 failed [(lowercase "i") == "ı"]
+... test 13 failed [(uppercase "STRAßE") == "STRASSE"]
+... test 14 failed [(length? "ド") == 1]
+... test 15 failed [(length? to-string #{65CC88F09D849EE38388E38299}) == 3]
+... test 16 failed [false]
+13 out of 16 tests failed
