@@ -112,6 +112,7 @@ JavaScript                     5 out of 16
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
 Python 3                      12 out of 16
 Rebol 3                        3 out of 16
+Red 0.42                       4 out of 16
 Ruby                           5 out of 16      16 out of 16 with UnicodeUtils Gem 
 ```
 

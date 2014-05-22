@@ -1,0 +1,16 @@
+red-042-darwin red042/UnicodeTests.red
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Test Unicode 6 failed
+Test Unicode 7 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Tests:        16
+Passed:       4
+Failed:       12
