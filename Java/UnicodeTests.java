@@ -65,8 +65,9 @@ public class UnicodeTests {
 
     test("Unicode 4", reverseGraphemes("noe\u0308l").equals("le\u0308on"));
 
-    test("Unicode 5", substringGraphemes("noe\u0308l", 0, 3).equals("noe\u0308")
-                      && countGraphemes(substringGraphemes("noe\u0308l", 0, 3)) == 3);
+    test("Unicode 5",
+        substringGraphemes("noe\u0308l", 0, 3).equals("noe\u0308")
+          && countGraphemes(substringGraphemes("noe\u0308l", 0, 3)) == 3);
 
     test("Unicode 6", "ba\uFB04e".toUpperCase().equals("BAFFLE"));
 
@@ -79,9 +80,9 @@ public class UnicodeTests {
     test("Unicode 9", unicodeString.replace("Treble", "Bass")
                                     .equals("\uD834\uDD22 - The Bass Clef"));
 
-    test("Unicode 10", "\uD834\uDD22 - The Bass Clef".codePointCount(
-                        0, "\uD834\uDD22 - The Bass Clef".length()) == 17 );
-
+    unicodeString = "\uD834\uDD22 - The Bass Clef";
+    test("Unicode 10",
+        unicodeString.codePointCount(0, unicodeString.length()) == 17);
 
     test("Unicode 11", "i".toUpperCase(turkish).equals("\u0130"));
 
