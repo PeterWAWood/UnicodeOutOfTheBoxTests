@@ -93,7 +93,8 @@ public class UnicodeTests {
                           Normalizer.Form.NFC)) == 3); 
     
     Collator deCollator = Collator.getInstance(german);
-    test("Unicode 16", deCollator.compare("weiss", "weiß") == 0);
+    deCollator.setStrength(Collator.PRIMARY);
+    test("Unicode 16", deCollator.equals("weiss", "weiß"));
     
     System.out.println("Tests performed: " + (passed + failed));
     System.out.println("Tests passed:    " + passed);
