@@ -47,13 +47,17 @@ public class UnicodeTests {
     return input.substring(graphemes.next(0), graphemes.next(end));
   }
 
+  static String nfc(String input) {
+      return Normalizer.normalize(input, Normalizer.Form.NFC);
+  }
+
   public static void main(String[] args) {
 
     String unicodeString;
     Locale turkish = new Locale("tr", "TR");
     Locale german = new Locale("de", "DE");
 
-    test("Unicode 1", Normalizer.normalize("c\u0327", Normalizer.Form.NFC).equals("\u00E7"));
+    test("Unicode 1", nfc("c\u0327").equals("\u00E7"));
 
     test("Unicode 2", !"c\u0327".equals("\u00E7"));
 
@@ -85,12 +89,10 @@ public class UnicodeTests {
 
     test("Unicode 13", "stra\u00DFe".toUpperCase().equals("STRASSE"));
 
-    test("Unicode 14", countGraphemes(Normalizer.normalize("\u03C8\u3099",
-                                      Normalizer.Form.NFC)) == 1);
+    test("Unicode 14", countGraphemes(nfc("\u03C8\u3099")) == 1);
 
-    test("Unicode 15", countGraphemes(
-                          Normalizer.normalize("e\u0308\uD834\uDD1E\u03C8\u3099",
-                          Normalizer.Form.NFC)) == 3);
+    test("Unicode 15",
+        countGraphemes(nfc("e\u0308\uD834\uDD1E\u03C8\u3099")) == 3);
 
     Collator deCollator = Collator.getInstance(german);
     deCollator.setStrength(Collator.PRIMARY);
