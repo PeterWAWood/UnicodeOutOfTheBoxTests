@@ -94,7 +94,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Length of "eU+0308U+1D11EU+30C8U+3099"
     The expected result is 3
 
-16. Performing case insensitive comparison
+16. Perform case-insensitive (case folding) comparison
     Compare "weiss" with "weiß"
     The expected result is true
     ß is U+00DF, UTF-8 C3 9F
