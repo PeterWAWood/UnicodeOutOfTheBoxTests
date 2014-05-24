@@ -1,0 +1,23 @@
+$ factor-vm unicode-tests.factor
+Unit Test: { { "ç" } [ "ç" nfc ] }
+Unit Test: { { f } [ "ç" "ç" = ] }
+Unit Test: { { 4 } [ "noël" nfc length ] }
+Unit Test: { { "lëon" } [ "noël" nfc reverse nfd ] }
+Unit Test: { { "noë" } [ 0 3 "noël" nfc subseq nfd ] }
+Unit Test: { { "BAFFLE" 6 } [ "baﬄe" >upper dup length ] }
+Unit Test: { { "CANTÙ" } [ "cantù" >upper ] }
+Unit Test: { { "CANT̀" } [ "cant̀" >upper ] }
+Unit Test: {
+    { "𝄢 - The Bass Clef" }
+    [
+        "𝄞 - The Treble Clef" "𝄞" "𝄢" replace
+        "Treble" "Bass" replace
+    ]
+}
+Unit Test: { { 17 } [ "𝄢 - The Bass Clef" >graphemes length ] }
+Unit Test: { { "İ" } [ "tr" locale [ "i" >upper ] with-variable ] }
+Unit Test: { { "STRASSE" } [ "straße" >upper ] }
+Unit Test: { { 1 } [ "ド" >graphemes length ] }
+Unit Test: { { 1 } [ "ド" >graphemes length ] }
+Unit Test: { { 3 } [ "ë𝄞ド" >graphemes length ] }
+Unit Test: { { t } [ "weiss" >case-fold "weiß" >case-fold = ] }
