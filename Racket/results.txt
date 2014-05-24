@@ -1,0 +1,22 @@
+$ raco test UnicodeTests.rkt
+--------------------
+FAILURE
+actual:     1
+expected:   2
+name:       check-equal?
+location:   (#<path:/home/earl/s/2014/05/UnicodeOutOfTheBoxTests/Racket/UnicodeTests.rkt> 53 0 1427 47)
+expression: (check-equal? 1 (string-length "ド"))
+
+Check failure
+--------------------
+--------------------
+FAILURE
+actual:     3
+expected:   5
+name:       check-equal?
+location:   (#<path:/home/earl/s/2014/05/UnicodeOutOfTheBoxTests/Racket/UnicodeTests.rkt> 56 0 1506 62)
+expression: (check-equal? 3 (string-length "ë𝄞ド"))
+
+Check failure
+--------------------
+2/16 test failures
