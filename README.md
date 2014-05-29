@@ -98,6 +98,18 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Compare "weiss" with "weiß"
     The expected result is true
     ß is U+00DF, UTF-8 C3 9F
+    
+17. Equality of decomposed characters with different order of code points
+    Compare "eU+0303U+033DU+032A" with "eU+033DU+032AU+0303"
+    The expected result is true
+    U+0303 is UTF-8 CC 83
+    U+032A is UTF-8 CC AA
+    U+033D is UTF-8 CD 8D
+    
+18. Equality of three code point decomposed character with precomposed alternative
+    Compare "XII" with "U+216B"
+    The expected result is true
+    U+216B is UTF-8 E2 85 AB
 ```
 
 ###The Results
