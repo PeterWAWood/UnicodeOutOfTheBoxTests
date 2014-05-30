@@ -100,7 +100,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     ß is U+00DF, UTF-8 C3 9F
     
 17. Equality of decomposed characters with different order of code points
-    Compare "eU+0303U+033DU+032A" with "eU+033DU+032AU+0303"
+    Compare "eU+0303U+033DU+032A" with "eU+032AU+0303U+033D"
     The expected result is true
     U+0303 is UTF-8 CC 83
     U+032A is UTF-8 CC AA
