@@ -106,8 +106,15 @@ int main(int argc, const char * argv[])
         test(@"Unicode 16", NSOrderedSame == [@"wei\u00DF" compare:@"weiss"
                                                             options:NSCaseInsensitiveSearch
                                                               range:NSMakeRange(
-                                                                    0,                                                            [@"wei\u00DF" length])
-                                                            locale:german]);
+                                                                    0,                                                            [@"wei\u00DF" length])]);
+        
+        test(@"Unicode 17", [@"\u0303\u033D\u032A" isEqualToString:@"\u033d\u032A\u0303"]);
+        
+        test(@"Unicode 18", [@"XII" isEqualToString:[@"\u216B"
+                                                     decomposedStringWithCompatibilityMapping]]);
+        
+        test(@"Unicode 19", ![@"XII" isEqualToString:[@"\u216B"
+                                                     decomposedStringWithCanonicalMapping]]);
        
         printf("Number of Tests: %d\n", passed + failed);
         printf("Number Passed:   %d\n", passed);

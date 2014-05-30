@@ -1,3 +1,4 @@
-Number of Tests: 16
-Number Passed:   16
-Number Failed:   0
+Test Unicode 17 Failed
+Number of Tests: 19
+Number Passed:   18
+Number Failed:   1
