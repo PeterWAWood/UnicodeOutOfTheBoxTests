@@ -106,10 +106,15 @@ In this context, "out of the box" means capabilities either built-in to the lang
     U+032A is UTF-8 CC AA
     U+033D is UTF-8 CD 8D
     
-18. Equality of three code point decomposed character with precomposed alternative
+18. Compatibility equivalence of three code point decomposed character with precomposed alternative
     Compare "XII" with "U+216B"
     The expected result is true
     U+216B is UTF-8 E2 85 AB
+    
+19. Canonical equivalence of three code point decomposed character with precomposed alternative
+    Compare "XII" with "U+216B"
+    The expected result is false
+    U+216B is UTF-8 E2 85 AB    
 ```
 
 ###The Results
