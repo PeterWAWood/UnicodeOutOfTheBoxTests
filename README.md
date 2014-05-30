@@ -126,7 +126,7 @@ Factor                        16 out of 16
 Go                             4 out of 16
 Java                          16 out of 16
 JavaScript                     5 out of 16
-LiveCode 7                    12 out of 16
+LiveCode 7                    13 out of 19
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
 Python 3                      12 out of 16
 Racket                        14 out of 16      Needs `tr_TR.UTF-8` locale data available

@@ -207,6 +207,19 @@ on mouseUp
    assertEqual "weiss", tUnicodeString
    endTest
    
+   startTest "Unicode 17"
+   put "e" & numToCodepoint(0x0303) & numToCodepoint(0x033D) & numToCodepoint(0x032A) into tUnicodeString
+   assertEqual tUnicodeString, "e" & numToCodepoint(0x033D) & numToCodepoint(0x032A) & numToCodepoint(0x0303)
+   endTest
+   
+   startTest "Unicode 18"
+   assertEqual normalizeText(0x216B, "NFKC"), normalizeText("XII", "NFKC") 
+   endTest
+   
+   startTest "Unicode 19"
+   assertNotEqual normalizeText(0x216B, "NFC"), normalizeText("XII", "NFC") 
+   endTest
+   
    # display summary
    endTestRun
    
