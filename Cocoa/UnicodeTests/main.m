@@ -92,7 +92,7 @@ int main(int argc, const char * argv[])
         test(@"Unicode 9", [changed isEqualToString:@"\U0001D122 - The Bass Clef"]);
         
         test(@"Unicode 10", countGraphemeClusters(@"\U0001D122 - The Bass Clef") == 17);
-        
+       
         test(@"Unicode 11", [[@"i" uppercaseStringWithLocale:turkish] isEqualToString:@"\u0130"]);
                 
         test(@"Unicode 12", [[@"I" lowercaseStringWithLocale:turkish] isEqualToString:@"\u0131"]);
@@ -108,7 +108,7 @@ int main(int argc, const char * argv[])
                                                               range:NSMakeRange(
                                                                     0,                                                            [@"wei\u00DF" length])]);
         
-        test(@"Unicode 17", [@"\u0303\u033D\u032A" isEqualToString:@"\u033d\u032A\u0303"]);
+        test(@"Unicode 17", [@"e\u0303\u033D\u032A" isEqualToString:@"e\u033d\u032A\u0303"]);
         
         test(@"Unicode 18", [@"XII" isEqualToString:[@"\u216B"
                                                      decomposedStringWithCompatibilityMapping]]);
