@@ -209,7 +209,7 @@ on mouseUp
    
    startTest "Unicode 17"
    put "e" & numToCodepoint(0x0303) & numToCodepoint(0x033D) & numToCodepoint(0x032A) into tUnicodeString
-   assertEqual tUnicodeString, "e" & numToCodepoint(0x033D) & numToCodepoint(0x032A) & numToCodepoint(0x0303)
+   assertEqual tUnicodeString, "e" & numToCodepoint(0x032A) & numToCodepoint(0x0303) & numToCodepoint(0x033D)
    endTest
    
    startTest "Unicode 18"

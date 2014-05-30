@@ -18,11 +18,6 @@ Assert #1
 Expected weiss
 Actual weiß
 Unicode16 Failed
-Test Unicode 17
-Assert #1
-Expected ẽ̪̽
-Actual e̪̽̃
-Unicode 17 Failed
 Test Unicode 18
 Assert #1
 Expected 0x216B
@@ -31,7 +26,7 @@ Unicode 18 Failed
 
 Summary Test Results
 Number of Tests	19
-Number Passed 	13
-Number Failed  	6
+Number Passed 	14
+Number Failed  	5
 
 TEST FAILURES!!
