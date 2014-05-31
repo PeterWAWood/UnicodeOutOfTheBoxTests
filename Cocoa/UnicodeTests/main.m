@@ -108,7 +108,7 @@ int main(int argc, const char * argv[])
                                                               range:NSMakeRange(
                                                                     0,                                                            [@"wei\u00DF" length])]);
         
-        test(@"Unicode 17", [@"e\u0303\u033D\u032A" isEqualToString:@"e\u033d\u032A\u0303"]);
+        test(@"Unicode 17", [@"e\u0303\u033D\u032A" isEqualToString:@"e\u032A\u0303\u033d"]);
         
         test(@"Unicode 18", [@"XII" isEqualToString:[@"\u216B"
                                                      decomposedStringWithCompatibilityMapping]]);
