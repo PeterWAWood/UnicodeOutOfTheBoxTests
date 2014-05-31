@@ -1,4 +1,4 @@
 Java$ java UnicodeTests
-Tests performed: 16
-Tests passed:    16
+Tests performed: 19
+Tests passed:    19
 Tests failed:    0

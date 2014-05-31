@@ -51,6 +51,14 @@ public class UnicodeTests {
       return Normalizer.normalize(input, Normalizer.Form.NFC);
   }
 
+  static String nfd(String input) {
+      return Normalizer.normalize(input, Normalizer.Form.NFD);
+  }
+
+  static String nfkd(String input) {
+      return Normalizer.normalize(input, Normalizer.Form.NFKD);
+  }
+
   public static void main(String[] args) {
 
     String unicodeString;
@@ -98,6 +106,13 @@ public class UnicodeTests {
     Collator deCollator = Collator.getInstance(german);
     deCollator.setStrength(Collator.PRIMARY);
     test("Unicode 16", deCollator.equals("weiss", "weiß"));
+
+    test("Unicode 17",
+        nfd("e\u0303\u033D\u032A").equals("e\u032A\u0303\u033D"));
+
+    test("Unicode 18", "XII".equals(nfkd("\u216B")));
+
+    test("Unicode 19", !"XII".equals("\u216B"));
 
     System.out.println("Tests performed: " + (passed + failed));
     System.out.println("Tests passed:    " + passed);
