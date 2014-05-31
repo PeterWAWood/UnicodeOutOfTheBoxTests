@@ -128,7 +128,7 @@ Java                          19 out of 19
 JavaScript                     5 out of 16
 LiveCode 7                    14 out of 19
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
-Python 3                      12 out of 16
+Python 3                      15 out of 19
 Racket                        17 out of 19      Needs `tr_TR.UTF-8` locale data available
 Rebol 3                        4 out of 19
 Red 0.42                       5 out of 19

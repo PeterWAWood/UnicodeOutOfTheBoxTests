@@ -26,6 +26,10 @@ def nfd(unistr):
     return unicodedata.normalize('NFD', unistr)
 
 
+def nfkd(unistr):
+    return unicodedata.normalize('NFKD', unistr)
+
+
 class UnicodeTests(unittest.TestCase):
     def test_01(self):
         self.assertEqual(nfd('\u00E7'), nfd('c\u0327'))
@@ -89,6 +93,15 @@ class UnicodeTests(unittest.TestCase):
 
     def test_16(self):
         self.assertEqual('weiß'.casefold(), 'weiss')
+
+    def test_17(self):
+        self.assertEqual(nfd('e\u0303\u033D\u032A'), 'e\u032A\u0303\u033D')
+
+    def test_18(self):
+        self.assertEqual('XII', nfkd('\u216B'))
+
+    def test_19(self):
+        self.assertNotEqual('XII', '\u216B')
 
 
 if __name__ == '__main__':
