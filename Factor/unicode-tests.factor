@@ -42,3 +42,11 @@ tools.test unicode.breaks unicode.case unicode.normalize ;
 ] unit-test
 
 { t } [ "weiss" >case-fold "weiß" >case-fold = ] unit-test
+
+{ "e\u00032A\u000303\u00033D" } [
+    "e\u000303\u00033D\u00032A" nfd
+] unit-test
+
+{ "XII" } [ "\u00216B" nfkd ] unit-test
+
+{ f } [ "XII" "\u00216B" = ] unit-test

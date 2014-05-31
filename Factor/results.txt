@@ -21,3 +21,6 @@ Unit Test: { { 1 } [ "ド" >graphemes length ] }
 Unit Test: { { 1 } [ "ド" >graphemes length ] }
 Unit Test: { { 3 } [ "ë𝄞ド" >graphemes length ] }
 Unit Test: { { t } [ "weiss" >case-fold "weiß" >case-fold = ] }
+Unit Test: { { "ẽ̪̽" } [ "ẽ̪̽" nfd ] }
+Unit Test: { { "XII" } [ "Ⅻ" nfkd ] }
+Unit Test: { { f } [ "XII" "Ⅻ" = ] }
