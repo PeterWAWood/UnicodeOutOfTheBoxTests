@@ -65,9 +65,11 @@ test "Unicode 15" equal? 3 length? "e^(0308)^(1D11E)^(30C8)^(3099)"
 
 test "Unicode 16" strict-equal? "weiss" "wei^(00DF)"
 
+test "Unicode 17" equal? "e^(0303)^(033D)^(032A)" "e^(032A)^(0303)^(033D)"
 
+test "Unicode 18" equal? "XII" "^(216B)"
 
-
+test "Unicode 19" not-equal? "XII" "^(216B)"
 
 print ["Tests:        " passed + failed]
 print ["Passed:       " passed]
