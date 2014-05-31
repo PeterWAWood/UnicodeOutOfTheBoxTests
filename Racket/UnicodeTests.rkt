@@ -9,6 +9,7 @@ Licensed under the Apache License, Version 2.0 (the "License")
 
 (define nfc string-normalize-nfc)
 (define nfd string-normalize-nfd)
+(define nfkd string-normalize-nfkd)
 
 (check-equal? "\u00E7" (nfc "c\u0327"))
 
@@ -56,3 +57,9 @@ Licensed under the Apache License, Version 2.0 (the "License")
 (check-equal? 3 (string-length "e\u0308\U01D11E\u30c8\u3099"))
 
 (check string-ci=? "weiss" "weiß")
+
+(check-equal? (nfd "e\u0303\u033D\u032A") "e\u032A\u0303\u033D")
+
+(check-equal? "XII" (nfkd "\u216B"))
+
+(check-not-equal? "XII" "\u216B")
