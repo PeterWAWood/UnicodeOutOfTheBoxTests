@@ -124,7 +124,7 @@ Language                          Score         Comment
 Cocoa - Objective-C           18 out of 19      Needs to be run under OSX 10.8+
 Factor                        19 out of 19
 Go                             4 out of 16
-Java                          16 out of 16
+Java                          19 out of 19
 JavaScript                     5 out of 16
 LiveCode 7                    14 out of 19
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
