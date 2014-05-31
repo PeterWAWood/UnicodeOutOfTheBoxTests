@@ -1,11 +1,22 @@
-ruby ruby/UnicodeTestsWithGem.rb
-Loaded suite ruby/UnicodeTestsWithGem
+peter$ ruby Ruby/UnicodeTestsWithGem.rb
+Loaded suite Ruby/UnicodeTestsWithGem
 Started
-................
+................F
+===============================================================================
+Failure: <false> is not true.
+test_unicode_17(TestSource)
+Ruby/UnicodeTestsWithGem.rb:90:in `test_unicode_17'
+     87:   end
+     88:   
+     89:   def test_unicode_17
+  => 90:     assert(UnicodeUtils.canonical_equivalents?(
+     91:                                   UnicodeUtils.nfd("e\xCC\x83\xCD\x8D\xCC\xAA"),
+     92:                                   UnicodeUtils.nfd("e\xCC\xAA\xCC\x83\xCD\x8D")))
+     93:   end
+===============================================================================
+..
 
-Finished in 0.011529 seconds.
+Finished in 0.021911 seconds.
 
-16 tests, 16 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
-100% passed
-
-1387.80 tests/s, 1387.80 assertions/s
+19 tests, 19 assertions, 1 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+94.7368% passed

@@ -71,4 +71,16 @@ class TestSource < Test::Unit::TestCase
   def test_unicode_16
     assert("wei\xC3\x9Fe".casecmp("weiss"))
   end
+  
+  def test_unicode_17
+    assert_equal("e\xCC\x83\xCD\x8D\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
+  end
+  
+  def test_unicode_18
+    assert_equal('XII', "\xE2\x85\xAB")
+  end
+  
+  def test_unicode_19
+    assert_not_equal('XII', "\xE2\x85\xAB")
+  end
 end

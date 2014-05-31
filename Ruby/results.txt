@@ -1,11 +1,11 @@
-peter$ ruby ruby/UnicodeTests.rb
-Loaded suite ruby/UnicodeTests
+peter$ ruby Ruby/UnicodeTests.rb
+Loaded suite Ruby/UnicodeTests
 Started
 F
 ===============================================================================
 Failure:
 test_unicode_01(TestSource)
-ruby/UnicodeTests.rb:8:in `test_unicode_01'
+Ruby/UnicodeTests.rb:8:in `test_unicode_01'
       5: class TestSource < Test::Unit::TestCase
       6: 
       7:   def test_unicode_01
@@ -24,7 +24,7 @@ diff:
 ===============================================================================
 Failure:
 test_unicode_03(TestSource)
-ruby/UnicodeTests.rb:16:in `test_unicode_03'
+Ruby/UnicodeTests.rb:16:in `test_unicode_03'
      13:   end
      14:   
      15:   def test_unicode_03
@@ -43,7 +43,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_04(TestSource)
-ruby/UnicodeTests.rb:20:in `test_unicode_04'
+Ruby/UnicodeTests.rb:20:in `test_unicode_04'
      17:   end
      18:   
      19:   def test_unicode_04
@@ -61,7 +61,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_05(TestSource)
-ruby/UnicodeTests.rb:24:in `test_unicode_05'
+Ruby/UnicodeTests.rb:24:in `test_unicode_05'
      21:   end
      22:   
      23:   def test_unicode_05
@@ -79,7 +79,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_06(TestSource)
-ruby/UnicodeTests.rb:28:in `test_unicode_06'
+Ruby/UnicodeTests.rb:28:in `test_unicode_06'
      25:   end
      26:   
      27:   def test_unicode_06
@@ -98,7 +98,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_07(TestSource)
-ruby/UnicodeTests.rb:32:in `test_unicode_07'
+Ruby/UnicodeTests.rb:32:in `test_unicode_07'
      29:   end
      30:   
      31:   def test_unicode_07
@@ -117,7 +117,7 @@ diff:
 ===============================================================================
 Failure:
 test_unicode_11(TestSource)
-ruby/UnicodeTests.rb:52:in `test_unicode_11'
+Ruby/UnicodeTests.rb:52:in `test_unicode_11'
      49:   
      50:   def test_unicode_11
      51:     # as far as I can tell there is no way to set the locale in Ruby
@@ -136,7 +136,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_12(TestSource)
-ruby/UnicodeTests.rb:56:in `test_unicode_12'
+Ruby/UnicodeTests.rb:56:in `test_unicode_12'
      53:   end
      54:   
      55:   def test_unicode_12
@@ -155,7 +155,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_13(TestSource)
-ruby/UnicodeTests.rb:60:in `test_unicode_13'
+Ruby/UnicodeTests.rb:60:in `test_unicode_13'
      57:   end
      58:   
      59:   def test_unicode_13
@@ -174,7 +174,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_14(TestSource)
-ruby/UnicodeTests.rb:64:in `test_unicode_14'
+Ruby/UnicodeTests.rb:64:in `test_unicode_14'
      61:   end
      62:   
      63:   def test_unicode_14
@@ -193,7 +193,7 @@ F
 ===============================================================================
 Failure:
 test_unicode_15(TestSource)
-ruby/UnicodeTests.rb:68:in `test_unicode_15'
+Ruby/UnicodeTests.rb:68:in `test_unicode_15'
      65:   end
      66:   
      67:   def test_unicode_15
@@ -208,11 +208,46 @@ diff:
 ? 3
 ? 5
 ===============================================================================
+.F
+===============================================================================
+Failure:
+test_unicode_17(TestSource)
+Ruby/UnicodeTests.rb:76:in `test_unicode_17'
+     73:   end
+     74:   
+     75:   def test_unicode_17
+  => 76:     assert_equal("e\xCC\x83\xCD\x8D\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
+     77:   end
+     78:   
+     79:   def test_unicode_18
+<"ẽ͍̪"> expected but was
+<"ẽ̪͍">
+
+diff:
+? ẽ̪͍̪
+===============================================================================
+F
+===============================================================================
+Failure:
+test_unicode_18(TestSource)
+Ruby/UnicodeTests.rb:80:in `test_unicode_18'
+     77:   end
+     78:   
+     79:   def test_unicode_18
+  => 80:     assert_equal('XII', "\xE2\x85\xAB")
+     81:   end
+     82:   
+     83:   def test_unicode_19
+<"XII"> expected but was
+<"Ⅻ">
+
+diff:
+? XII
+? Ⅻ 
+===============================================================================
 .
 
-Finished in 0.055723 seconds.
+Finished in 0.060411 seconds.
 
-16 tests, 16 assertions, 11 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
-31.25% passed
-
-287.13 tests/s, 287.13 assertions/s
+19 tests, 19 assertions, 13 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+31.5789% passed

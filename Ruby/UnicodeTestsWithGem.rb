@@ -5,6 +5,8 @@ require 'unicode_utils/canonical_equivalents_q'
 require "unicode_utils/casefold"
 require 'unicode_utils/downcase'
 require 'unicode_utils/each_grapheme'
+require 'unicode_utils/nfd'
+require 'unicode_utils/nfkd'
 require 'unicode_utils/upcase'
 
 class TestSource < Test::Unit::TestCase
@@ -82,6 +84,20 @@ class TestSource < Test::Unit::TestCase
   
   def test_unicode_16
     assert_equal(UnicodeUtils.casefold("weiss"), UnicodeUtils.casefold("weiß"))
+  end
+  
+  def test_unicode_17
+    assert(UnicodeUtils.canonical_equivalents?(
+                                  UnicodeUtils.nfd("e\xCC\x83\xCD\x8D\xCC\xAA"),
+                                  UnicodeUtils.nfd("e\xCC\xAA\xCC\x83\xCD\x8D")))
+  end
+  
+  def test_unicode_18
+    assert_equal('XII', UnicodeUtils.nfkd("\xE2\x85\xAB"))
+  end
+  
+  def test_unicode_19
+    assert_not_equal('XII', UnicodeUtils.nfd("\xE2\x85\xAB"))
   end
   
 end

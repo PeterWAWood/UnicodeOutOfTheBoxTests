@@ -65,6 +65,12 @@ func main() {
   test("Unicode 15", utf8.RuneCountInString("e\u0308\u1D11E\u03C8\u3099") == 3);
   
   test("Unicode 16", strings.EqualFold("weiss", "wei\u00DF"));
+  
+  test("Unicode 17", "e\u0303\u033D\u032A" == "e\u032A\u0303\u033D");
+
+  test("Unicode 18", "XII" == "\u216B");
+
+  test("Unicode 19", "XII" != "\u216B");
    
   fmt.Printf("passed %d, failed %d\n", passed, failed);
 }

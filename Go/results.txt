@@ -11,4 +11,6 @@ Test Unicode 13 failed
 Test Unicode 14 failed
 Test Unicode 15 failed
 Test Unicode 16 failed
-passed 4, failed 12
+Test Unicode 17 failed
+Test Unicode 18 failed
+passed 5, failed 14
