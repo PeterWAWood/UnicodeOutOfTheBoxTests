@@ -3,7 +3,6 @@ UnicodeOutOfTheBoxTests
 
 A short set of tests to give an indication of how well a language supports Unicode "Out of the Box". These tests only address basic string features and not text processing features such as end of word and paragraph support.
 
-
 Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
 
 In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
@@ -125,7 +124,7 @@ Cocoa - Objective-C           18 out of 19      Needs to be run under OSX 10.8+
 Factor                        19 out of 19
 Go                             4 out of 16
 Java                          19 out of 19
-JavaScript                     5 out of 16
+JavaScript                     6 out of 19
 LiveCode 7                    14 out of 19
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
 Python 3                      15 out of 19

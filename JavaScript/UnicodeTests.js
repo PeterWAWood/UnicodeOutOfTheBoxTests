@@ -42,7 +42,8 @@ test('Unicode 9', unicodeString.replace('Treble', 'Bass') ===
 
 test('Unicode 10', '\uD834\uDD22 - The Bass Clef'.length === 17);
 
-// As far as I can tell there is no way to swet the locale or language in JavaScript
+// As far as I can tell there is no way to set the locale or language in JavaScript
+// so tests 11 and 12 will fail
 test('Unicode 11', 'i'.toUpperCase === '\u0130');
 
 test('Unicode 12', 'I'.toLowerCase === '\u0131');
@@ -54,6 +55,12 @@ test('Unicode 14', '\u03C8\u3099'.length === 1);
 test('Unicode 15', 'e\u0308\uD834\uDD1E\u03C8\u3099'.length === 3);
 
 test('Unicode 16', 'wei\u00DF'.match(/weiss/i));
+
+test("Unicode 17", "e\u0303\u033D\u032A" === "e\u032A\u0303\u033D");
+
+test("Unicode 18", "XII" === "\u216B");
+
+test("Unicode 19", "XII" !==("\u216B"));
 
 print('Tests run  ' + (passed + failed));
 print('Passed     ' + passed);

@@ -7,64 +7,72 @@ NOTES:
   
   SpiderMonkey fails Test 6 which the others pass
 
-Schulz:JavaScript peter$ v8 UnicodeTests.js
-Failed Test 1
-Failed Test 3
-Failed Test 4
-Failed Test 5
-Failed Test 10
-Failed Test 11
-Failed Test 12
-Failed Test 13
-Failed Test 14
-Failed Test 15
-Failed Test 16
-Tests run  16
+Schulz:UnicodeOutOfTheBoxTests peter$ v8 JavaScript/UnicodeTests.js
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Test Unicode 10 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Test Unicode 17 failed
+Test Unicode 18 failed
+Tests run  19
+Passed     6
+Failed     13
+Schulz:UnicodeOutOfTheBoxTests peter$ jsc JavaScript/UnicodeTests.js
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Test Unicode 10 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Test Unicode 17 failed
+Test Unicode 18 failed
+Tests run  19
+Passed     6
+Failed     13
+Schulz:UnicodeOutOfTheBoxTests peter$ rhino JavaScript/UnicodeTests.js
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Test Unicode 10 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Test Unicode 17 failed
+Test Unicode 18 failed
+Tests run  19
+Passed     6
+Failed     13
+Schulz:UnicodeOutOfTheBoxTests peter$ js JavaScript/UnicodeTests.js
+Test Unicode 1 failed
+Test Unicode 3 failed
+Test Unicode 4 failed
+Test Unicode 5 failed
+Test Unicode 6 failed
+Test Unicode 10 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Test Unicode 17 failed
+Test Unicode 18 failed
+Tests run  19
 Passed     5
-Failed     11
-Schulz:JavaScript peter$ jsc UnicodeTests.js
-Failed Test 1
-Failed Test 3
-Failed Test 4
-Failed Test 5
-Failed Test 10
-Failed Test 11
-Failed Test 12
-Failed Test 13
-Failed Test 14
-Failed Test 15
-Failed Test 16
-Tests run  16
-Passed     5
-Failed     11
-Schulz:JavaScript peter$ rhino UnicodeTests.js
-Failed Test 1
-Failed Test 3
-Failed Test 4
-Failed Test 5
-Failed Test 10
-Failed Test 11
-Failed Test 12
-Failed Test 13
-Failed Test 14
-Failed Test 15
-Failed Test 16
-Tests run  16
-Passed     5
-Failed     11
-Schulz:JavaScript peter$ js UnicodeTests.js
-Failed Test 1
-Failed Test 3
-Failed Test 4
-Failed Test 5
-Failed Test 6
-Failed Test 10
-Failed Test 11
-Failed Test 12
-Failed Test 13
-Failed Test 14
-Failed Test 15
-Failed Test 16
-Tests run  16
-Passed     4
-Failed     12
+Failed     14
