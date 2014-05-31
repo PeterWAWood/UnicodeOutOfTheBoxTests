@@ -11,6 +11,24 @@
 int passed = 0;
 int failed = 0;
 
+BOOL compareGraphemeClusters(NSString *str1, NSRange cluster1, NSString *str2, NSRange cluster2) {
+    return [[str1 substringWithRange:cluster1] isEqualToString:[str2 substringWithRange:cluster2]];
+}
+
+BOOL compareFirstGraphemeCluster(NSString *str1, NSString *str2){
+    NSRange cluster1;
+    NSRange cluster2;
+    
+    cluster1 = [str1 rangeOfComposedCharacterSequenceAtIndex:0];
+    cluster2 = [str2 rangeOfComposedCharacterSequenceAtIndex:0];
+    
+    if (!compareGraphemeClusters(str1, cluster1, str2, cluster2)) {
+        return FALSE;
+    }
+    return TRUE;
+}
+
+
 int countGraphemeClusters(NSString *str) {
     int graphemeClusterCount = 0;
     for (int i=0; i < [str length]; ++graphemeClusterCount) {
@@ -92,9 +110,9 @@ int main(int argc, const char * argv[])
         test(@"Unicode 9", [changed isEqualToString:@"\U0001D122 - The Bass Clef"]);
         
         test(@"Unicode 10", countGraphemeClusters(@"\U0001D122 - The Bass Clef") == 17);
-       
+        
         test(@"Unicode 11", [[@"i" uppercaseStringWithLocale:turkish] isEqualToString:@"\u0130"]);
-                
+         
         test(@"Unicode 12", [[@"I" lowercaseStringWithLocale:turkish] isEqualToString:@"\u0131"]);
         
         test(@"Unicode 13", [[@"stra\u00DFe" uppercaseString] isEqualToString:@"STRASSE"]);
@@ -108,7 +126,8 @@ int main(int argc, const char * argv[])
                                                               range:NSMakeRange(
                                                                     0,                                                            [@"wei\u00DF" length])]);
         
-        test(@"Unicode 17", [@"e\u0303\u033D\u032A" isEqualToString:@"e\u032A\u0303\u033d"]);
+        test(@"Unicode 17", compareFirstGraphemeCluster(@"e\u0303\u033D\u032A",
+                                                        @"e\u032A\u0303\u033d"));
         
         test(@"Unicode 18", [@"XII" isEqualToString:[@"\u216B"
                                                      decomposedStringWithCompatibilityMapping]]);
