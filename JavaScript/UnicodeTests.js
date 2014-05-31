@@ -60,7 +60,7 @@ test("Unicode 17", "e\u0303\u033D\u032A" === "e\u032A\u0303\u033D");
 
 test("Unicode 18", "XII" === "\u216B");
 
-test("Unicode 19", "XII" !==("\u216B"));
+test("Unicode 19", "XII" !== "\u216B");
 
 print('Tests run  ' + (passed + failed));
 print('Passed     ' + passed);
