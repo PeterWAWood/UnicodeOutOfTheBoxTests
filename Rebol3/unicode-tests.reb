@@ -75,6 +75,16 @@ Unicode-tests: [
 
     ; test 16 (Rebol 3 doesn't have case folding option)
     [false]
+    
+    ;test 17
+    [equal? "e^(0303)^(033D)^(032A)" "e^(032A)^(0303)^(033D)"]
+
+    ;test 18 (Rebol 3 doesn't normalisation)
+    [equal? "XII" "^(216B)"]
+
+    ;test 19
+    [not-equal? "XII" "^(216B)"]
+
 ]
 
 

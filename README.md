@@ -130,7 +130,7 @@ LiveCode 7                    14 out of 19
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
 Python 3                      12 out of 16
 Racket                        14 out of 16      Needs `tr_TR.UTF-8` locale data available
-Rebol 3                        3 out of 16
+Rebol 3                        4 out of 19
 Red 0.42                       5 out of 19
 Ruby                           5 out of 16      16 out of 16 with UnicodeUtils Gem
 ```

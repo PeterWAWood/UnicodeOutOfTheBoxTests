@@ -1,3 +1,5 @@
+REBOL 3 REBOL 3 2.101.0.4.2:
+
 Testing...
 ... test 1 failed ["ç" == "ç"]
 ... test 3 failed [(length? "noël") = 4]
@@ -22,4 +24,6 @@ Testing...
 ... test 14 failed [(length? "ド") == 1]
 ... test 15 failed [(length? to-string #{65CC88F09D849EE38388E38299}) == 3]
 ... test 16 failed [false]
-13 out of 16 tests failed
+... test 17 failed [equal? "ẽ̪̽" "ẽ̪̽"]
+... test 18 failed [equal? "XII" "Ⅻ"]
+15 out of 19 tests failed
