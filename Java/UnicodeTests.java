@@ -113,7 +113,20 @@ public class UnicodeTests {
     test("Unicode 18", "XII".equals(nfkd("\u216B")));
 
     test("Unicode 19", !"XII".equals("\u216B"));
-
+    
+    test("Unicode 20", "\u1E14".equals(nfc("\u1E14")));
+    
+    test("Unicode 21", "E\u0304\u0300".equals(nfd("\u1E14")));
+    
+    test("Unicode 22", "\u1E14".equals(nfc("\u0112\u0300")));
+    
+    test("Unicode 23", "E\u0304\u0300".equals(nfd("\u0112\u0300")));   
+   
+    test("Unicode 24", "\u00C8\u0304".equals(nfc("\u00C8\u0304")));
+    
+    test("Unicode 25",
+        !nfd("e\u0303\u033D\u032A").equals("e\u033D\u032A\u0303"));
+  
     System.out.println("Tests performed: " + (passed + failed));
     System.out.println("Tests passed:    " + passed);
     System.out.println("Tests failed:    " + failed);
