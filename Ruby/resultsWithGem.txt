@@ -1,9 +1,9 @@
 peter$ ruby Ruby/UnicodeTestsWithGem.rb
 Loaded suite Ruby/UnicodeTestsWithGem
 Started
-...................
+.........................
 
-Finished in 0.01646 seconds.
+Finished in 0.015801 seconds.
 
-19 tests, 19 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+25 tests, 25 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
 100% passed

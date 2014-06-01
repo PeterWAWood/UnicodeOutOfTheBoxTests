@@ -216,15 +216,16 @@ Ruby/UnicodeTests.rb:76:in `test_unicode_17'
      73:   end
      74:   
      75:   def test_unicode_17
-  => 76:     assert_equal("e\xCC\x83\xCD\x8D\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
+  => 76:     assert_equal("e\xCC\x83\xCD\xBD\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
      77:   end
      78:   
      79:   def test_unicode_18
-<"ẽ͍̪"> expected but was
+<"ẽͽ̪"> expected but was
 <"ẽ̪͍">
 
 diff:
-? ẽ̪͍̪
+? e  ̃ͽ̪
+?  ̪  ͍ 
 ===============================================================================
 F
 ===============================================================================
@@ -245,9 +246,66 @@ diff:
 ? XII
 ? Ⅻ 
 ===============================================================================
-.
+..F
+===============================================================================
+Failure:
+test_unicode_21(TestSource)
+Ruby/UnicodeTests.rb:91:in `test_unicode_21'
+     88:   end
+     89:   
+     90:   def test_unicode_21
+  => 91:     assert_equal("E\xCC\x84\xCC\x80", "\xE1\xB8\x94")
+     92:   end
+     93:   
+     94:   def test_unicode_22
+<"Ḕ"> expected but was
+<"Ḕ">
 
-Finished in 0.060411 seconds.
+diff:
+? Ḕ
+? Ḕ    
+===============================================================================
+F
+===============================================================================
+Failure:
+test_unicode_22(TestSource)
+Ruby/UnicodeTests.rb:95:in `test_unicode_22'
+     92:   end
+     93:   
+     94:   def test_unicode_22
+  => 95:     assert_equal("\xE1\xB8\x94", "\xC4\x92\xCC\x80")
+     96:   end
+     97:   
+     98:   def test_unicode_23
+<"Ḕ"> expected but was
+<"Ḕ">
 
-19 tests, 19 assertions, 13 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
-31.5789% passed
+diff:
+? Ḕ  
+? Ḕ
+===============================================================================
+F
+===============================================================================
+Failure:
+test_unicode_23(TestSource)
+Ruby/UnicodeTests.rb:99:in `test_unicode_23'
+      96:   end
+      97:   
+      98:   def test_unicode_23
+  =>  99:     assert_equal("E\xCC\x84\xCC\x80", "\xC4\x92\xCC\x80")
+     100:   end
+     101:   
+     102:   def test_unicode_24
+<"Ḕ"> expected but was
+<"Ḕ">
+
+diff:
+? Ḕ
+? Ē    
+===============================================================================
+..
+
+Finished in 0.121183 seconds.
+
+25 tests, 25 assertions, 16 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+36% passed

@@ -25,8 +25,8 @@ Actual XII
 Unicode 18 Failed
 
 Summary Test Results
-Number of Tests	19
-Number Passed 	14
+Number of Tests	25
+Number Passed 	20
 Number Failed  	5
 
 TEST FAILURES!!

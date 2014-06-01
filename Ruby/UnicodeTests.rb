@@ -83,4 +83,28 @@ class TestSource < Test::Unit::TestCase
   def test_unicode_19
     assert_not_equal('XII', "\xE2\x85\xAB")
   end
+   def test_unicode_20
+    assert_equal("\xE1\xB8\x94", "\xE1\xB8\x94")
+  end
+  
+  def test_unicode_21
+    assert_equal("E\xCC\x84\xCC\x80", "\xE1\xB8\x94")
+  end
+  
+  def test_unicode_22
+    assert_equal("\xE1\xB8\x94", "\xC4\x92\xCC\x80")
+  end
+  
+  def test_unicode_23
+    assert_equal("E\xCC\x84\xCC\x80", "\xC4\x92\xCC\x80")
+  end
+  
+  def test_unicode_24
+    assert_equal("\xC3\x88\xCC\x84", "\xC3\x88\xCC\x84")
+  end
+  
+  def test_unicode_25
+    assert_not_equal("e\xCC\xAA\xCC\x83\xCD\xBD","e\xCD\xBD\xCC\xAA\xCC\x83")
+  end
+  
 end

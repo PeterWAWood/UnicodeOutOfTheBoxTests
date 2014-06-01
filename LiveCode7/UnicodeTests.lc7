@@ -220,7 +220,35 @@ on mouseUp
    assertNotEqual normalizeText(0x216B, "NFC"), normalizeText("XII", "NFC") 
    endTest
    
+   startTest "Unicode 20"
+   assertEqual numToCodepoint(0x1E14), normalizeText(numToCodepoint(0x1E14), "NFC")
+   endTest
+   
+   startTest "Unicode 21"
+   assertEqual "E" & numToCodepoint(0x0304) & numToCodepoint(0x0300), normalizeText(numToCodepoint(0x1E14), "NFD")
+   endTest
+   
+   startTest "Unicode 22"
+   assertEqual numToCodepoint(0x1E14), normalizeText(numToCodepoint(0x0112) & numToCodepoint(0x0300), "NFC")
+   endTest
+   
+   startTest "Unicode 23"
+   put numToCodepoint(0x0112) & numToCodepoint(0x0300) into tUnicodeString
+   assertEqual "E" & numToCodepoint(0x0304) & numToCodepoint(0x0300), normalizeText(tUnicodeString, "NFD")
+   endTest
+   
+   startTest "Unicode 24"
+   put numToCodepoint(0xC8) & numToCodepoint(0x0304) into tUnicodeString
+   assertEqual numToCodepoint(0xC8) & numToCodepoint(0x0304), normalizeText(tUnicodeString, "NFC")
+   endTest
+   
+   startTest "Unicode 25"
+   put "e" & numToCodepoint(0x0303) & numToCodepoint(0x033D) & numToCodepoint(0x032A) into tUnicodeString
+   assertNotEqual tUnicodeString, "e" & numToCodepoint(0x033D) & numToCodepoint(0x032A) & numToCodepoint(0x0303)
+   endTest
+   
    # display summary
    endTestRun
    
 end mouseUp
+

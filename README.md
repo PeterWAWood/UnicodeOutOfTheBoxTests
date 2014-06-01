@@ -113,9 +113,41 @@ In this context, "out of the box" means capabilities either built-in to the lang
 19. Canonical equivalence of three code point decomposed character with precomposed alternative
     Compare "XII" with "U+216B"
     The expected result is false
-    U+216B is UTF-8 E2 85 AB    
-```
+    U+216B is UTF-8 E2 85 AB
 
+20. Normalisation of a precomposed character with a three code point decomposed form using NFC
+    Normalise U+1E14
+    The expected result is U+1E14
+    U+1E14 is UTF-8 E1 88 94 
+
+21. Normalisation of a precomposed character with a three code point decomposed form using NFD
+    Normalise U+1E14
+    The expected result is "EU+0304U+0300"
+    U+1E14 is UTF-8 E1 88 94
+    U+0304 is UTF-8 CC 84
+    U+0300 is UTF-8 CC 80
+    
+22. Normalise precomposed + decomposed character to precomposed character with NFC
+    Normalise "U+0112U+0300"
+    The expected result is "U+1E14"
+    U+0112 is UTF-8 C4 92
+    
+23. Normalise precomposed + decomposed character to three decomposed characters with NFD
+    Normalise "U+0112U+0300"
+    The expected result is "EU+0304U+0300"
+   
+24. Normalise precomposed + decomposed character to be unchanged with NFC
+    Normalise "U+C8U+0304"
+    The expected result is "U+C8U+0304"
+   
+25. Inequality of decomposed characters with different order of combining characters of the same class
+    Compare "eU+0303U+033DU+032A" with "eU+033DU+032AU+0303"
+    The expected result is false
+    U+0303 is UTF-8 CC 83
+    U+032A is UTF-8 CC AA
+    U+033D is UTF-8 CD BD
+```   
+   
 ###The Results
 
 ```
@@ -125,13 +157,13 @@ Factor                        19 out of 19
 Go                             5 out of 19
 Java                          19 out of 19
 JavaScript                     6 out of 19
-LiveCode 7                    14 out of 19
+LiveCode 7                    20 out of 25
 Perl                          14 out of 16      16 out of 16 with CPAN Unicode::Casing
 Python 3                      15 out of 19
 Racket                        17 out of 19      Needs `tr_TR.UTF-8` locale data available
 Rebol 3                        4 out of 19
 Red 0.42                       5 out of 19
-Ruby                           6 out of 19      19 out of 19 with UnicodeUtils Gem
+Ruby                           9 out of 25      25 out of 25 with UnicodeUtils Gem
 ```
 
 ###The Code and Detailed Results
