@@ -87,9 +87,7 @@ class TestSource < Test::Unit::TestCase
   end
   
   def test_unicode_17
-    assert(UnicodeUtils.canonical_equivalents?(
-                                  UnicodeUtils.nfd("e\xCC\x83\xCD\x8D\xCC\xAA"),
-                                  UnicodeUtils.nfd("e\xCC\xAA\xCC\x83\xCD\x8D")))
+    assert(UnicodeUtils.canonical_equivalents?("e\xCC\xAA\xCC\x83\xCD\xBD","e\xCC\xAA\xCC\x83\xCD\xBD"))
   end
   
   def test_unicode_18

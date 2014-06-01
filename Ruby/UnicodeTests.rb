@@ -73,7 +73,7 @@ class TestSource < Test::Unit::TestCase
   end
   
   def test_unicode_17
-    assert_equal("e\xCC\x83\xCD\x8D\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
+    assert_equal("e\xCC\x83\xCD\xBD\xCC\xAA", "e\xCC\xAA\xCC\x83\xCD\x8D")
   end
   
   def test_unicode_18

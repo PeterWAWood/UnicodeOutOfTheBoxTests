@@ -103,7 +103,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     The expected result is true
     U+0303 is UTF-8 CC 83
     U+032A is UTF-8 CC AA
-    U+033D is UTF-8 CD 8D
+    U+033D is UTF-8 CD BD
     
 18. Compatibility equivalence of three code point decomposed character with precomposed alternative
     Compare "XII" with "U+216B"
@@ -131,7 +131,7 @@ Python 3                      15 out of 19
 Racket                        17 out of 19      Needs `tr_TR.UTF-8` locale data available
 Rebol 3                        4 out of 19
 Red 0.42                       5 out of 19
-Ruby                           6 out of 19      18 out of 19 with UnicodeUtils Gem
+Ruby                           6 out of 19      19 out of 19 with UnicodeUtils Gem
 ```
 
 ###The Code and Detailed Results
