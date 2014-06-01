@@ -1,4 +1,4 @@
 Test Unicode 17 Failed
-Number of Tests: 19
-Number Passed:   18
+Number of Tests: 25
+Number Passed:   24
 Number Failed:   1

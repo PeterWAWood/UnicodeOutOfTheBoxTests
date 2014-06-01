@@ -59,7 +59,6 @@ int main(int argc, const char * argv[])
         int position;
         int elements;
         NSLocale *turkish = [[NSLocale alloc] initWithLocaleIdentifier:@"tr_TR"];
-        NSLocale *german = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
         
         test(@"Unicode  1", [@"c\u0327" isEqualToString:[@"\u00E7" decomposedStringWithCanonicalMapping]]);
 
@@ -134,7 +133,27 @@ int main(int argc, const char * argv[])
         
         test(@"Unicode 19", ![@"XII" isEqualToString:[@"\u216B"
                                                      decomposedStringWithCanonicalMapping]]);
+        
+        test(@"Unicode 20",
+             [@"\u1E14" isEqualToString:[@"\u1E14" precomposedStringWithCanonicalMapping]]);
        
+        test(@"Unicode 21",
+             [@"E\u0304\u0300" isEqualToString:[@"\u1E14"decomposedStringWithCanonicalMapping]]);
+        
+        test(@"Unicode 22",
+             [@"\u1E14"isEqualToString:[@"\u0112\u0300" precomposedStringWithCanonicalMapping]]);
+        
+        test(@"Unicode 23",
+             [@"E\u0304\u0300" isEqualToString:
+              [@"\u0112\u0300" decomposedStringWithCanonicalMapping]]);
+     
+        test(@"Unicode 24",
+             [@"\u00C8\u0304"isEqualToString:
+                [@"\u00C8\u0304" precomposedStringWithCanonicalMapping]]);
+        
+        test(@"Unicode 25", !compareFirstGraphemeCluster(@"e\u0303\u033D\u032A",
+                                                        @"e\u033d\u032A\u0303"));
+
         printf("Number of Tests: %d\n", passed + failed);
         printf("Number Passed:   %d\n", passed);
         printf("Number Failed:   %d\n", failed);
