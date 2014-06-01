@@ -1,12 +1,3 @@
-NOTES:
-
-  V8 - Google V8 Engine
-  Rhino - Mozilla Java Hosted Engine
-  JSC - Apple JavaScriptCore
-  JS - Mozilla SpiderMonkey
-  
-  SpiderMonkey fails Test 6 which the others pass
-
 Schulz:UnicodeOutOfTheBoxTests peter$ v8 JavaScript/UnicodeTests.js
 Test Unicode 1 failed
 Test Unicode 3 failed
@@ -21,9 +12,12 @@ Test Unicode 15 failed
 Test Unicode 16 failed
 Test Unicode 17 failed
 Test Unicode 18 failed
-Tests run  19
-Passed     6
-Failed     13
+Test Unicode 21 failed
+Test Unicode 22 failed
+Test Unicode 23 failed
+Tests run  25
+Passed     9
+Failed     16
 Schulz:UnicodeOutOfTheBoxTests peter$ jsc JavaScript/UnicodeTests.js
 Test Unicode 1 failed
 Test Unicode 3 failed
@@ -38,9 +32,12 @@ Test Unicode 15 failed
 Test Unicode 16 failed
 Test Unicode 17 failed
 Test Unicode 18 failed
-Tests run  19
-Passed     6
-Failed     13
+Test Unicode 21 failed
+Test Unicode 22 failed
+Test Unicode 23 failed
+Tests run  25
+Passed     9
+Failed     16
 Schulz:UnicodeOutOfTheBoxTests peter$ rhino JavaScript/UnicodeTests.js
 Test Unicode 1 failed
 Test Unicode 3 failed
@@ -55,9 +52,12 @@ Test Unicode 15 failed
 Test Unicode 16 failed
 Test Unicode 17 failed
 Test Unicode 18 failed
-Tests run  19
-Passed     6
-Failed     13
+Test Unicode 21 failed
+Test Unicode 22 failed
+Test Unicode 23 failed
+Tests run  25
+Passed     9
+Failed     16
 Schulz:UnicodeOutOfTheBoxTests peter$ js JavaScript/UnicodeTests.js
 Test Unicode 1 failed
 Test Unicode 3 failed
@@ -73,6 +73,9 @@ Test Unicode 15 failed
 Test Unicode 16 failed
 Test Unicode 17 failed
 Test Unicode 18 failed
-Tests run  19
-Passed     5
-Failed     14
+Test Unicode 21 failed
+Test Unicode 22 failed
+Test Unicode 23 failed
+Tests run  25
+Passed     8
+Failed     17
