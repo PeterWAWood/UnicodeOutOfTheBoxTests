@@ -1,5 +1,3 @@
-REBOL 3 REBOL 3 2.101.0.4.2:
-
 Testing...
 ... test 1 failed ["ç" == "ç"]
 ... test 3 failed [(length? "noël") = 4]
@@ -26,4 +24,7 @@ Testing...
 ... test 16 failed [false]
 ... test 17 failed [equal? "ẽ̪̽" "ẽ̪̽"]
 ... test 18 failed [equal? "XII" "Ⅻ"]
-15 out of 19 tests failed
+... test 21 failed [equal? "E\u0304\u0300" "\u1E14"]
+... test 22 failed [equal? "\u1E14" "\u0112\u0300"]
+... test 23 failed [equal? "E\u0304\u0300" "\u0112\u0300"]
+18 out of 25 tests failed

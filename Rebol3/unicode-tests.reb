@@ -84,9 +84,26 @@ Unicode-tests: [
 
     ;test 19
     [not-equal? "XII" "^(216B)"]
+    
+    ;test 20
+    [equal? "\u1E14" "\u1E14"]
+    
+    ;test 21
+    [equal? "E\u0304\u0300" "\u1E14"]
+    
+    ;test 22
+    [equal? "\u1E14" "\u0112\u0300"]
+    
+    ;test 23
+    [equal? "E\u0304\u0300" "\u0112\u0300"]   
+   
+    ;test 24
+    [equal? "\u00C8\u0304" "\u00C8\u0304"]
+    
+    ;test 25
+    [not-equal? "e\u0303\u033D\u032A" "e\u033D\u032A\u0303"]
 
 ]
-
 
 ;; test runner
 tests: map-each t Unicode-tests [do t]
