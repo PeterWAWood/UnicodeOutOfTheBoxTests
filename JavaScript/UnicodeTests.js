@@ -64,9 +64,9 @@ test("Unicode 19", "XII" !== "\u216B");
 
 test("Unicode 20", "\u1E14" === "\u1E14");
     
-test("Unicode 21", "E\u0304\u0300" ==="\u1E14");
+test("Unicode 21", "E\u0304\u0300" === "\u1E14");
     
-test("Unicode 22", "\u1E14" ==="\u0112\u0300");
+test("Unicode 22", "\u1E14" === "\u0112\u0300");
     
 test("Unicode 23", "E\u0304\u0300" === "\u0112\u0300");   
    
