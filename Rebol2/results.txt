@@ -1,0 +1,21 @@
+Test Unicode 01 failed
+Test Unicode 03 failed
+Test Unicode 04 failed
+Test Unicode 05 failed
+Test Unicode 06 failed
+Test Unicode 07 failed
+Test Unicode 10 failed
+Test Unicode 11 failed
+Test Unicode 12 failed
+Test Unicode 13 failed
+Test Unicode 14 failed
+Test Unicode 15 failed
+Test Unicode 16 failed
+Test Unicode 17 failed
+Test Unicode 18 failed
+Test Unicode 21 failed
+Test Unicode 22 failed
+Test Unicode 23 failed
+Tests:         25
+Passed:        7
+Failed:        18
