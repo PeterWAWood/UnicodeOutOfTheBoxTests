@@ -4,7 +4,7 @@ use feature 'unicode_strings';
 use utf8;
 use open qw( :encoding(UTF-8) :std );
 use Unicode::Normalize;
-use Test::More tests => 16;
+use Test::More tests => 25;
 
 is NFC("c\x{0327}"), "\x{00E7}", 'Unicode 1'; 
 
@@ -60,8 +60,22 @@ is length NFC("\x{30C8}\x{3099}"), 1, 'Unicode 14';
 
 is length NFC("e\x{0308}\x{1D11E}\x{30C8}\x{3099}"), 3, 'Unicode 15';
 
-#############################
-# Extra test
+is fc("weiss"), fc("weiß"), 'Unicode 16';
 
-# testing case folding
-is fc("weiss"), fc("weiß"), 'Unicode 16'; 
+is NFD("e\x{0303}\x{033D}\x{032A}"), "e\x{032A}\x{0303}\x{033D}", "Unicode 17";
+
+is "XII", NFKD("\x{216B}"), "Unicode 18";
+
+isnt "XII", NFD("\x{216B}"), "Unicode 19";
+
+is "\x{1E14}", NFC("\x{1E14}"), "Unicode 20";
+
+is "E\x{0304}\x{0300}", NFD("\x{1E14}"), "Unicode 21";
+
+is "\x{1E14}", NFC("\x{0112}\x{0300}"), "Unicode 22";
+
+is "E\x{0304}\x{0300}", NFD("\x{0112}\x{0300}"), "Unicode 23";
+
+is "\x{00C8}\x{0304}", NFC("\x{00C8}\x{0304}"), "Unicode 24";
+
+isnt NFD("e\x{0303}\x{033D}\x{032A}"), "e\x{033D}\x{032A}\x{0303}", "Unicode 25";

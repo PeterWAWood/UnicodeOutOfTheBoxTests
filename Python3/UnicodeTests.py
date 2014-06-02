@@ -102,7 +102,24 @@ class UnicodeTests(unittest.TestCase):
 
     def test_19(self):
         self.assertNotEqual('XII', '\u216B')
-
+        
+    def test_20(self):
+      self.assertEqual("\u1E14", nfc("\u1E14"))
+        
+    def test_21(self):
+        self.assertEqual("E\u0304\u0300", nfd("\u1E14"))
+    
+    def test_22(self):
+        self.assertEqual("\u1E14", nfc("\u0112\u0300"))
+    
+    def test_23(self):
+        self.assertEqual("E\u0304\u0300", nfd("\u0112\u0300"))
+   
+    def test_24(self):
+        self.assertEqual("\u00C8\u0304", nfc("\u00C8\u0304"))
+    
+    def test_25(self):
+        self.assertNotEqual("e\u0303\u033D\u032A", "e\u033D\u032A\u0303")
 
 if __name__ == '__main__':
     unittest.main()
