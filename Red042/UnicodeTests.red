@@ -29,15 +29,15 @@ test "Unicode 4" equal? "le^(0308)on" reverse "noe^(0308)l"
 test "Unicode 5" equal? "noe^(0308)" copy/part "noe^(0308)l" 3
 
 ;; uppercase not implemented in Red 0.42, use case insensitive compare instead
-;;test "Unicode 6" strict-equal? "BAFFLE" uppercase "ba^(FB04)e"
+;test "Unicode "Unicode 6" strict-equal? "BAFFLE" uppercase "ba^(FB04)e"
 test "Unicode 6" equal? "BAFFLE" "ba^(FB04)e"
 
 ;; uppercase not implemented in Red 0.42, use case insensitive compare instead
-;;test "Unicode 7" strict-equal? "CANT^(00F9)" uppercase "cant^(00D9)"
+;test "Unicode "Unicode 7" strict-equal? "CANT^(00F9)" uppercase "cant^(00D9)"
 test "Unicode 7" equal? "CANT^(00F9)" "cant^(00D9)"
 
 ;; uppercase not implemented in Red 0.42, use case insensitive compare instead
-;;test "Unicode 8" strict-equal? "CANTU^(0300)" uppercase "cantu^(0300)"
+;test "Unicode "Unicode 8" strict-equal? "CANTU^(0300)" uppercase "cantu^(0300)"
 test "Unicode 8" equal? "CANTU^(0300)" "cantu^(0300)"
 
 unicode-string: "^(01D11E) - The Treble Clef"
@@ -48,15 +48,15 @@ test "Unicode 9" equal? "^(01D122) - The Bass Clef" unicode-string
 test "Unicode 10" equal? 17 length? "^(01D122) - The Bass Clef"
 
 ;; uppercase not implemented in Red 0.42, use case insensitive compare instead
-;;test "Unicode 11" strict-equal? "^(0130)" uppercase "i"
+;test "Unicode "Unicode 11" strict-equal? "^(0130)" uppercase "i"
 test "Unicode 11" equal? "^(0130)" "i"
 
 ;; uppercase not implemented in Red 0.42, use case insensitive compare instead
-;;test "Unicode 12" strict-equal? "^(0131)" lowercase "I"
+;test "Unicode "Unicode 12" strict-equal? "^(0131)" lowercase "I"
 test "Unicode 12" equal? "^(0131)" "I"
 
 ;; uppercase not implemented in Red 0.42
-;;test "Unicode 13" strict-equal? "STRASSE" uppercase "strat^(00DF)e"
+;test "Unicode "Unicode 13" strict-equal? "STRASSE" uppercase "strat^(00DF)e"
 test "Unicode 13" equal? "STRASSE" "strat^(00DF)e"
 
 test "Unicode 14" equal? 1 length? "^(30C8)^(3099)"
@@ -70,6 +70,18 @@ test "Unicode 17" equal? "e^(0303)^(033D)^(032A)" "e^(032A)^(0303)^(033D)"
 test "Unicode 18" equal? "XII" "^(216B)"
 
 test "Unicode 19" not-equal? "XII" "^(216B)"
+
+test "Unicode 20" equal? "\u1E14" "\u1E14"
+
+test "Unicode 21" equal? "E\u0304\u0300" "\u1E14"
+
+test "Unicode 22" equal? "\u1E14" "\u0112\u0300"
+
+test "Unicode 23" equal? "E\u0304\u0300" "\u0112\u0300"
+
+test "Unicode 24" equal? "\u00C8\u0304" "\u00C8\u0304"
+
+test "Unicode 25" not-equal? "e\u0303\u033D\u032A" "e\u033D\u032A\u0303"
 
 print ["Tests:        " passed + failed]
 print ["Passed:       " passed]
