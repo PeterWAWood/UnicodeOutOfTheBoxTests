@@ -153,14 +153,14 @@ In this context, "out of the box" means capabilities either built-in to the lang
 ```
 Language                          Score         Comment
 Cocoa - Objective-C           24 out of 25      Needs to be run under OSX 10.8+
-Factor                        19 out of 19
+Factor                        25 out of 25
 Go                             8 out of 25
 Java                          25 out of 25
 JavaScript                     9 out of 25
 LiveCode 7                    20 out of 25
 Perl                          23 out of 25      25 out of 25 with CPAN Unicode::Casing
 Python 3                      21 out of 25
-Racket                        17 out of 19      Needs `tr_TR.UTF-8` locale data available
+Racket                        23 out of 25      Needs `tr_TR.UTF-8` locale data available
 Rebol 2                        7 out of 25      Uses UTF-8
 Rebol 3                        7 out of 25
 Red 0.42                       8 out of 25

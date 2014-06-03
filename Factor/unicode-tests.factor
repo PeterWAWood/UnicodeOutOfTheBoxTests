@@ -50,3 +50,17 @@ tools.test unicode.breaks unicode.case unicode.normalize ;
 { "XII" } [ "\u00216B" nfkd ] unit-test
 
 { f } [ "XII" "\u00216B" = ] unit-test
+
+{ "\u001E14" } [ "\u001E14" nfc ] unit-test
+
+{ "E\u000304\u000300" } [ "\u001E14" nfd ] unit-test
+
+{ "\u001E14" } [ "\u000112\u000300" nfc ] unit-test
+
+{ "E\u000304\u000300" } [ "\u000112\u000300" nfd ] unit-test
+
+{ "\u0000C8\u000304" } [ "\u0000C8\u000304" nfc ] unit-test
+
+{ f } [
+    "e\u000303\u00033D\u00032A" "e\u00033D\u00032A\u000303" =
+] unit-test

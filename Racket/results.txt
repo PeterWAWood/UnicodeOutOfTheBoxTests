@@ -19,4 +19,4 @@ expression: (check-equal? 3 (string-length "ë𝄞ド"))
 
 Check failure
 --------------------
-2/19 test failures
+2/25 test failures

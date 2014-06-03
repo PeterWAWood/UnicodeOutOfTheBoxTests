@@ -63,3 +63,15 @@ Licensed under the Apache License, Version 2.0 (the "License")
 (check-equal? "XII" (nfkd "\u216B"))
 
 (check-not-equal? "XII" "\u216B")
+
+(check-equal? "\u1E14" (nfc "\u1E14"))
+
+(check-equal? "E\u0304\u0300" (nfd "\u1E14"))
+
+(check-equal? "\u1E14" (nfc "\u0112\u0300"))
+
+(check-equal? "E\u0304\u0300" (nfd "\u0112\u0300"))
+
+(check-equal? "\u00C8\u0304" (nfc "\u00C8\u0304"))
+
+(check-not-equal? "e\u0303\u033D\u032A" "e\u033D\u032A\u0303")
