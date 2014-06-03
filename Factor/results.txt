@@ -24,3 +24,9 @@ Unit Test: { { t } [ "weiss" >case-fold "weiß" >case-fold = ] }
 Unit Test: { { "ẽ̪̽" } [ "ẽ̪̽" nfd ] }
 Unit Test: { { "XII" } [ "Ⅻ" nfkd ] }
 Unit Test: { { f } [ "XII" "Ⅻ" = ] }
+Unit Test: { { "Ḕ" } [ "Ḕ" nfc ] }
+Unit Test: { { "Ḕ" } [ "Ḕ" nfd ] }
+Unit Test: { { "Ḕ" } [ "Ḕ" nfc ] }
+Unit Test: { { "Ḕ" } [ "Ḕ" nfd ] }
+Unit Test: { { "È̄" } [ "È̄" nfc ] }
+Unit Test: { { f } [ "ẽ̪̽" "e̪̽̃" = ] }
