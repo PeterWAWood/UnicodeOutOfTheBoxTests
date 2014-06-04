@@ -125,8 +125,7 @@ int main(int argc, const char * argv[])
                                                               range:NSMakeRange(
                                                                     0,                                                            [@"wei\u00DF" length])]);
         
-        test(@"Unicode 17", compareFirstGraphemeCluster(@"e\u0303\u033D\u032A",
-                                                        @"e\u032A\u0303\u033d"));
+        test(@"Unicode 17", [[@"e\u0303\u033D\u032A" decomposedStringWithCanonicalMapping] isEqualToString:[@"e\u032A\u0303\u033d" decomposedStringWithCanonicalMapping]]);
         
         test(@"Unicode 18", [@"XII" isEqualToString:[@"\u216B"
                                                      decomposedStringWithCompatibilityMapping]]);
