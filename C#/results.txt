@@ -1,0 +1,6 @@
+peter$ mono C#/UnicodeTests.exe
+Test Unicode 6 failed
+Test Unicode 13 failed
+Number of Tests   25
+Passed            23
+Failed            2
