@@ -158,7 +158,7 @@ Factor                        25 out of 25
 Go                             8 out of 25
 Java                          25 out of 25
 JavaScript                     9 out of 25
-LiveCode 7                    20 out of 25
+LiveCode 7                    21 out of 25
 Perl                          23 out of 25      25 out of 25 with CPAN Unicode::Casing
 PHP                           23 out of 25      
 Python 3                      21 out of 25

@@ -213,11 +213,11 @@ on mouseUp
    endTest
    
    startTest "Unicode 18"
-   assertEqual normalizeText(0x216B, "NFKC"), normalizeText("XII", "NFKC") 
+   assertEqual normalizeText(numToCodepoint(0x216B), "NFKC"), normalizeText("XII", "NFKC") 
    endTest
    
    startTest "Unicode 19"
-   assertNotEqual normalizeText(0x216B, "NFC"), normalizeText("XII", "NFC") 
+   assertNotEqual normalizeText(numToCodepoint(0x216B), "NFC"), normalizeText("XII", "NFC") 
    endTest
    
    startTest "Unicode 20"
@@ -251,4 +251,3 @@ on mouseUp
    endTestRun
    
 end mouseUp
-
