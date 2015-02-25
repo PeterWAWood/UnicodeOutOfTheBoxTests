@@ -1,4 +1,4 @@
-# encoding: UTF-8
+# encoding: utf-8
 
 require 'test/unit'
 
@@ -13,7 +13,7 @@ class TestSource < Test::Unit::TestCase
   end
   
   def test_unicode_03
-    assert_equal(4, "noe\xCC\x88l".length)
+    assert_equal(4, "noe\xCC\x88l".unicode_normalize.length)
   end
   
   def test_unicode_04
@@ -77,30 +77,30 @@ class TestSource < Test::Unit::TestCase
   end
   
   def test_unicode_18
-    assert_equal('XII', "\xE2\x85\xAB")
+    assert_equal('XII'.unicode_normalize, "\xE2\x85\xAB".unicode_normalize)
   end
   
   def test_unicode_19
     assert_not_equal('XII', "\xE2\x85\xAB")
   end
-   def test_unicode_20
-    assert_equal("\xE1\xB8\x94", "\xE1\xB8\x94")
+   def test_unicode_20 
+    assert_equal("\xE1\xB8\x94".unicode_normalize, "\xE1\xB8\x94")
   end
   
   def test_unicode_21
-    assert_equal("E\xCC\x84\xCC\x80", "\xE1\xB8\x94")
+    assert_equal("E\xCC\x84\xCC\x80", "\xE1\xB8\x94".unicode_normalize(:nfd))
   end
   
   def test_unicode_22
-    assert_equal("\xE1\xB8\x94", "\xC4\x92\xCC\x80")
+    assert_equal("\xE1\xB8\x94", "\xC4\x92\xCC\x80".unicode_normalize)
   end
   
   def test_unicode_23
-    assert_equal("E\xCC\x84\xCC\x80", "\xC4\x92\xCC\x80")
+    assert_equal("E\xCC\x84\xCC\x80", "\xC4\x92\xCC\x80".unicode_normalize(:nfd))
   end
   
   def test_unicode_24
-    assert_equal("\xC3\x88\xCC\x84", "\xC3\x88\xCC\x84")
+    assert_equal("\xC3\x88\xCC\x84".unicode_normalize, "\xC3\x88\xCC\x84".unicode_normalize)
   end
   
   def test_unicode_25

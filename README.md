@@ -166,7 +166,7 @@ Racket                        23 out of 25      Needs `tr_TR.UTF-8` locale data 
 Rebol 2                        7 out of 25      Uses UTF-8
 Rebol 3                        7 out of 25
 Red 0.42                       8 out of 25
-Ruby                           9 out of 25      25 out of 25 with UnicodeUtils Gem
+Ruby                          13 out of 25      25 out of 25 with UnicodeUtils Gem
 ```
 
 ###The Code and Detailed Results
