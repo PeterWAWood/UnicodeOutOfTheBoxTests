@@ -1,13 +1,16 @@
 UnicodeOutOfTheBoxTests
 =======================
 
+## *** Warning ***
+Whilst the tests are still relevant, the code is somewhat outdated. Ruby Unicode support is much improved from the version that was used for these tests. There are new languages that probably shold be included such as Rust and Swift.
+
 A short set of tests to give an indication of how well a language supports Unicode "Out of the Box". These tests only address basic string features and not text processing features such as end of word and paragraph support.
 
 Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
 
 In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
 
-###The Tests
+### The Tests
 ```
 1.  Equality of precomposed and decomposed characters
     Compare U+00E7 with "c" followed by U+0327
@@ -148,7 +151,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     U+033D is UTF-8 CD BD
 ```   
    
-###The Results
+###  The Results
 
 ```
 Language                          Score         Comment
@@ -169,16 +172,16 @@ Red 0.42                       8 out of 25
 Ruby                          13 out of 25      25 out of 25 with UnicodeUtils Gem
 ```
 
-###The Code and Detailed Results
+### The Code and Detailed Results
 Both the code and the detailed results are stored in a separate folder for each language under the main directory. The results are simply the console output (or equivalent) saved in a text file.
 
-###Improving the Tests
+### Improving the Tests
 I have no doubt that the tests could be improved. If you have any suggestions to make, please do so by raising an issue in this repository.
 
-###Improving the Code
+### Improving the Code
 I also have little doubt that the code could be improved. It is quite possible that the code does not properly reflect the out-of-the-box capability of the language. Please submit a pull request if you can improve it.
 
 Please bear in mind that the purpose of this repository is to check the Unicode features of the language, so as long as the code correctly reflects them it is sufficient.
 
-###Adding Further Languages
+### Adding Further Languages
 Contributions of the tests written in languages not currently covered would be most welcome. Please submit a pull request with the code and results
