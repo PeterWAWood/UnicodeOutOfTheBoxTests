@@ -4,6 +4,7 @@ UnicodeOutOfTheBoxTests
 ## *** Warning ***
 Whilst the tests are still relevant, the code is somewhat outdated. Ruby Unicode support is much improved from the version that was used for these tests. There are new languages that probably shold be included such as Rust and Swift.
 
+## Out of the Box Tests
 A short set of tests to give an indication of how well a language supports Unicode "Out of the Box". These tests only address basic string features and not text processing features such as end of word and paragraph support.
 
 Musing Mortoray's [blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments provided a helpful starting point for these tests.
